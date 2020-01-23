@@ -1,0 +1,96 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="wallet-top clearfix">
+                        <div class="wallet-box">
+                            <h3>Wallet Address :
+                                {{statement.defaultAddress}}</h3>
+                            <h3>Balance :<strong>{{statement.balance}}</strong> <img
+                                    src="{{constants.ACCESSURL}}img/logo.png" alt=""></h3>
+                        </div>
+                        <div class="wallet-export-link">
+                            <input type="hidden" class="statementtype" value="{{type}}" />
+                            <a class="downloadbutton hide" download>Newsletter</a>
+                            <a href="{{constants.ACCESSURL}}users/statements-download" class="downloadStatements"><i
+                                    class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                            <!--<a href="#"><img src="{{constants.ACCESSURL}}img/excel-icon.png" alt=""></a>-->
+                        </div>
+                        <div class="wallet-sl-box clearfix">
+                            <ul>
+                                <li class="{{#ifCond type '==' 'B'}}active{{/ifCond}}"><a
+                                        href="{{constants.ACCESSURL}}users/statements?type=B">Bitcoin</a></li>
+                                <li class="{{#ifCond type '==' 'E'}}active{{/ifCond}}"><a
+                                        href="{{constants.ACCESSURL}}users/statements?type=E">Ethereum</a></li>
+                                <li class="{{#ifCond type '==' 'T'}}active{{/ifCond}}"><a
+                                        href="{{constants.ACCESSURL}}users/statements?type=T">TAC</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="table-part">
+                        <div class="title-table">
+                            <h2>Transaction History</h2>
+                        </div>
+                        <div class="history-table comman-table table-responsive">
+                            {{#ifCond statement.transactions.length '>' 0 }}
+                            <table class="footable table table-stripped statements" data-page-size="10"
+                                data-paging="true">
+                                <thead>
+                                    <tr>
+                                        {{!-- <th data-sort-ignore="true"></th> --}}
+                                        <th>To</th>
+                                        <th>From</th>
+                                        <th>Amount</th>
+                                        <th>Hash</th>
+                                        <th>Date and Time</th>
+                                        <th data-sort-ignore="true">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each statement.transactions}}
+                                    <tr>
+                                        <td>{{this.to}}</td>
+                                        <td>{{this.from}}</td>
+                                        <td>{{this.value}}</td>
+                                        <td>{{this.hash}}</td>
+                                        <td>{{formatDate this.timeStamp}}</td>
+                                        <td><a href="{{ this.txURL }}" target="_blank">View On EtherScan</a></td>
+                                    </tr>
+                                    {{/each}}
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5">
+                                            <ul class="pagination pull-right"></ul>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            {{/ifCond}}
+                            {{#ifCond statement '==' '' }}
+                            <h3>No Transactions Found</h3>
+                            {{/ifCond}}
+                            {{#ifCond statement.transactions.length '==' 0 }}
+                            <h3>No Transactions Found</h3>
+                            {{/ifCond}}
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

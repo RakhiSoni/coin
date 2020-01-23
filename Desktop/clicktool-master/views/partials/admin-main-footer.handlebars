@@ -1,0 +1,116 @@
+</div>
+<input type="hidden" value="" id="kycTabination">
+<!-- Mainly scripts -->
+<script src="{{constants.ACCESSURL}}admin/js/jquery-2.1.1.js"></script>
+<script src="{{constants.ACCESSURL}}admin/js/bootstrap.min.js"></script>
+<script src="{{constants.ACCESSURL}}admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="{{constants.ACCESSURL}}admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="{{constants.ACCESSURL}}admin/js/inspinia.js"></script>
+<script src="{{constants.ACCESSURL}}admin/js/plugins/pace/pace.min.js"></script>
+<script src="{{constants.ACCESSURL}}admin/js/plugins/dataTables/datatables.min.js">
+</script>
+<script src="{{constants.ACCESSURL}}js/admin-js.js" type="text/javascript"></script>
+<script src="{{constants.ACCESSURL}}js/jquery.toast.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function () {
+        let dataTable = document.getElementsByClassName('dataTables-example').length;
+        let dataTable1 = document.getElementsByClassName('dataTables-example-0').length;
+        if (dataTable > 0) {
+            $('.dataTables-example').DataTable();
+        } else if (dataTable1 > 0) {
+            $(".dataTables-example-0").DataTable({
+                order: [],
+                'columnDefs': [{
+                    'targets': [0], /* column index */
+                    'orderable': false, /* true or false */
+                }]
+            })
+        }
+
+        /* Init DataTables */
+        let kyc = document.getElementById('kyc');
+        if (kyc !== null) {
+            let getData = localStorage.getItem('kyc-tab');
+            if (getData == 'failedAction') {
+                $('.nav-tabs a[href="#prt-tab1"]').tab('show');
+                localStorage.removeItem('kyc-tab');
+            } else if (getData == 'acceptAction') {
+                $('.nav-tabs a[href="#prt-tab2"]').tab('show');
+                localStorage.removeItem('kyc-tab');
+            } else if (getData == 'pendingAction') {
+                $('.nav-tabs a[href="#prt-tab0"]').tab('show');
+                localStorage.removeItem('kyc-tab');
+            }
+        }
+    }
+    );
+</script>
+<script type="text/javascript">
+    // Get the modal
+    var modal = document.getElementsByClassName("myModal");
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementsByClassName("myImg");
+    var modalImg = document.getElementsByClassName("img01");
+    for (var i = 0; i < img.length; i++) {
+        img[i].onclick = function () {
+            modal[0].style.display = "block";
+            modalImg[0].src = this.src;
+        }
+    }
+    // Get the <span> element that closes the modal
+    function openModal() {
+        document.getElementsByClassName('myModal').style.display = "block";
+    }
+    function closeModal() {
+        document.getElementsByClassName('myModal')[0].style.display = "none";
+    }
+</script>
+<script>
+    if ("{{result.headline}}") {
+        if ("{{result.headline}}" === 'Sale Ended') {
+            document.getElementById("days").textContent = '00';
+            document.getElementById("hours").textContent = '00';
+            document.getElementById("minutes").textContent = '00';
+            document.getElementById("secounds").textContent = '00';
+            document.getElementById("myBtn").disabled = true;
+        }
+        else {
+            // Set the date we're counting down to
+            let countDownDate = new Date('{{result.futureDate}}').getTime();
+
+            // Update the count down every 1 second
+            setInterval(function () {
+
+                // Get today's date and time
+                let now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                let distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="demo"
+                document.getElementById("days").textContent = days.toString().length < 2 ? '0' + days : days;
+                document.getElementById("hours").textContent = hours.toString().length < 2 ? '0' + hours : hours;
+                document.getElementById("minutes").textContent = minutes.toString().length < 2 ? '0' + minutes : minutes;
+                document.getElementById("secounds").textContent = seconds.toString().length < 2 ? '0' + seconds : seconds;
+
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("timend").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        }
+
+    }
+
+</script>
+</body>
+
+</html>

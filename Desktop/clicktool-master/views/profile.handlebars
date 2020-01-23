@@ -1,0 +1,123 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12" id="profile">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="title-table title-lft">
+                        <h2>Edit Profile</h2>
+                    </div>
+                    <form action="{{constants.ASSESSURL}}/api/users/edit-profile?access_token={{user._id}}"
+                        class="updateProile" method="post" enctype="multipart/form-data">
+                        <div class="my-account-section my-account-edit-section">
+                            <div class="my-ac-img">
+                                {{#ifCond userdetails.profilePicture '!=' ''}}
+                                <img src="{{constants.ASSESSURL}}/uploads/profile_picture/{{userdetails.profilePicture}}"
+                                    alt="" class="profile-pic">
+                                {{else}}
+                                <img src="{{constants.ASSESSURL}}/img/my-ac-img.png" alt="" class="profile-pic">
+                                {{/ifCond}}
+                                <div class="ac-edit-upload-btn">
+                                    <input type="file" onkeypress="return minLengthCheck(event)" name="profilePicture"
+                                        id="profilePicture" accept="image/*">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group user-fr">
+                                        <img src="/img/user-fr-icon.png">
+                                        <input class="form-control" onkeypress="return minLengthCheck(event)"
+                                            type="text" placeholder="First Name" name="firstname"
+                                            value="{{userdetails.firstname}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group user-fr">
+                                        <img src="/img/user-fr-icon.png">
+                                        <input class="form-control" type="text"
+                                            onkeypress="return minLengthCheck(event)" placeholder="Last Name"
+                                            name="lastname" value="{{userdetails.lastname}}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group date-fr" id="data_1">
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control" placeholder="26/07/2018" name="dob"
+                                                value="{{userdetails.dob}}"><span class="input-group-addon"><img
+                                                    src="{{constants.ASSESSURL}}/img/calendaricon.png"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group user-fr">
+                                        <img src="/img/user-fr-icon.png">
+                                        <input class="form-control" onkeypress="return minLengthCheck(event)"
+                                            type="text" placeholder="Usrename" name="username"
+                                            value="{{userdetails.username}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group cr-code-box">
+                                        <select class="form-control" name="countryCode">
+                                            {{#ifCond userdetails.countryCode '!=' ''}}
+                                            <option value="{{userdetails.countryCode}}" selected="">
+                                                {{userdetails.countryCode}}</option>
+                                            {{/ifCond}}
+                                            {{#each country}}
+                                            <option value="{{this.code}}">{{this.code}}</option>
+                                            {{/each}}
+                                        </select>
+                                        <div class="phone-fr-img">
+                                            <input class="form-control " type="number"
+                                                oninput="return maxLengthCheck(this)" maxlength="13" minlength="7"
+                                                placeholder="Phone" name="phone" value="{{userdetails.phone}}" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group email-fr">
+                                        <img src="/img/email-icon.png">
+                                        <input class="form-control" onkeypress="return minLengthCheck(event)"
+                                            type="email" placeholder="Email" readonly="" value="{{userdetails.email}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group ibm-fr">
+                                        <img src="/img/ibm-fr-icon.png" width="width: 24px;">
+                                        <input class="form-control" type="text"
+                                            onkeypress="return minLengthCheck(event)" placeholder="Company"
+                                            name="company" value="{{userdetails.company}}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group ">
+                                        <img src="../img/flag-fr-icon.png">
+                                        <select class="form-control" name="country"
+                                            style="background: url(../img/select-box-arrow.png) right center no-repeat #f3f0e0;">
+                                            {{#ifCond userdetails.country '!=' ''}}
+                                            <option value="{{userdetails.country}}" selected="">{{userdetails.country}}
+                                            </option>
+                                            {{/ifCond}}
+                                            {{#each country}}
+                                            <option value="{{this.name}}">{{this.name}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="update-btn">
+                                <button class="btn btn-primary" type="submit">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

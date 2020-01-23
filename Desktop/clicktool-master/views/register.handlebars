@@ -1,0 +1,79 @@
+<div class="login-main-section signup-main-section">
+    <div class="login-part">
+        <div class="login-logo">
+            <a href="#"><img src="{{frontConstant.ACCESSURL}}img/logo.png" alt=""></a>
+        </div>
+        <h1>The Abundance Coin</h1>
+        <div class="login-form">
+            <h2>Sign Up</h2>
+            <form action="{{frontConstant.ACCESSURL}}api/users/signup" method="post" class="ajax-register">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group user-fr">
+                            <img src="img/user-fr-icon.png">
+                            <input class="form-control" type="text" onkeypress="return minLengthCheck(event)"
+                                placeholder="First Name" name="fname" required="">
+                        </div>
+                        <div class="form-group user-fr">
+                            <img src="img/user-fr-icon.png">
+                            <input class="form-control" type="text" onkeypress="return minLengthCheck(event)"
+                                placeholder="Last Name" name="lname" required="">
+                        </div>
+                        <div class="form-group email-fr">
+                            <img src="img/email-icon.png">
+                            <input class="form-control" type="email" onkeypress="return minLengthCheck(event)"
+                                placeholder="Email" name="email" required="">
+                        </div>
+                        <div class="form-group phone-fr cr-code-box">
+                            <select class="form-control" name="countryCode" style="height: 50px;" name="countryCode"
+                                required="">
+                                {{#each country}}
+                                <option value="{{this.code}}">{{this.code}}</option>
+                                {{/each}}
+                            </select>
+                            <img src="img/phone-fr-icon.png" style="left: 28%;top: 13px; width: 25px;">
+                            <input type="number" onkeypress="return minLengthCheck(event)"
+                                oninput="return maxLengthCheck(this)" maxlength="13" minlength="7" class="form-control"
+                                placeholder="Phone" name="phone" style="height: 50px;" required="" />
+                        </div>
+                        <div class="form-group pw-fr">
+                            <img src="img/password-icon.png">
+                            <input type="password" onkeypress="return minLengthCheck(event)" required=true
+                                pattern="[^\s]+" class="form-control" name="password" id="password" maxlength="30"
+                                minlength="8" placeholder=" Password" autocomplete="off">
+                        </div>
+                        <div class="form-group pw-fr">
+                            <img src="img/password-icon.png">
+                            <input type="password" onkeypress="return minLengthCheck(event)" required=true
+                                pattern="[^\s]+" class="form-control" name="c_password" id="c_password" maxlength="30"
+                                minlength="8" placeholder="Confirm Password" autocomplete="off">
+                        </div>
+                        <div class="form-group referral-fr">
+                            <img src="img/reffrel-fr-icon.png">
+                            <input class="form-control" type="text" onkeypress="return minLengthCheck(event)"
+                                placeholder="Referral Code" name="referralCode">
+                        </div>
+
+                        <div class="terms-box clearfix">
+                            <div class="terms-check-box">
+                                <input type="checkbox" required="">
+                                <span></span>
+                            </div>
+                            <p>I agree with <a href="#" data-toggle="modal" data-target="#Modal-terms-use">Terms and
+                                    Conditions.</a></p>
+                        </div>
+                    </div>
+                    <div class="login-btn">
+                        <button class="buttonload btn-primary" type="submit">
+                            Sign Up
+                        </button>
+                        <a href="" class="btn hide account-created" data-toggle="modal"
+                            data-target="#Modal-ac-created"></a>
+                    </div>
+            </form>
+            <div class="signup-link">
+                <p>Do have an account? <a href="{{frontConstant.ACCESSURL}}">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,436 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2 Jul, 2018, 3:15:44 PM
+    Author     : Hp
+*/
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.rate-style {
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 1px solid;
+  border-color: #885a14;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+.input-type {
+  /* height: 44px; */
+  border: 1px solid #936619;
+  background-color: #f3f0e0;
+  border-radius: 4px;
+  font-size: 16px;
+  /* width: 80px; */
+  text-align: center;
+  color: #936619;
+  /* padding-top: 14px; */
+  margin-right: 10px;
+  padding: 10px;
+  white-space: nowrap;
+}
+.rate-space {
+  padding: 10px;
+  /* overflow: hidden; */
+}
+.rate {
+  font-size: 170%;
+  padding-bottom: 20px;
+  color: #885a0f;
+}
+.dashboard-box-css {
+  border-radius: 6px;
+  box-shadow: 4px 0px 5px 0px #cccccc;
+  height: 60px;
+  width: 150px;
+  background-image: linear-gradient(to right, #885a0f 0%, #c19d46 100%) !important;
+  /* margin-top: 10px; */
+}
+.kyc-top-bar {
+  text-align: center;
+  padding: 20px 0;
+}
+.kyc-top-bar ul {
+  margin: 0;
+  padding: 0;
+}
+.kyc-top-bar ul li {
+  margin: 0 0px;
+  padding: 0;
+  list-style: none;
+  width: 33.33%;
+  float: left;
+}
+.kyc-top-bar ul li .box {
+  position: relative;
+}
+.kyc-top-bar ul li .box:before {
+  position: absolute;
+  top: 50%;
+  height: 8px;
+  width: calc(100% - 130px);
+  margin-top: -4px;
+  right: 50%;
+  content: '';
+  background: #e0e5e6;
+  z-index: 1;
+  margin-right: 65px;
+  border-radius: 5px;
+}
+.kyc-top-bar ul li.current .box:before {
+  background: #be9842;
+}
+.kyc-top-bar ul li:first-child .box:before {
+  display: none;
+}
+.kyc-top-bar ul li .box .icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.kyc-top-bar ul li .box .ic-1 {
+  background: url(../img/kyc-icon1.png) 0 0 no-repeat #e0e5e6;
+}
+.kyc-top-bar ul li .box .ic-2 {
+  background: url(../img/kyc-icon2.png) 0 0 no-repeat #e0e5e6;
+}
+.kyc-top-bar ul li .box .ic-3 {
+  background: url(../img/kyc-icon3.png) 0 0 no-repeat #e0e5e6;
+}
+
+.kyc-top-bar ul li.current .box .icon {
+  background-position: 0 bottom;
+  /* background-color: #22c0a1; */
+  background-color: #be9943;
+  border-color: #bb9540;
+  /* background-image: linear-gradient(to bottom, #885a0f 0%, #c19d46 100%) !important; */
+}
+
+.kyc-section {
+  max-width: 970px;
+  margin: 0 auto;
+  /* padding: 20px 0 0 0; */
+}
+.kyc-status {
+  padding: 39px;
+}
+.kyc-status img {
+  width: 180px;
+}
+.kyc-status h3 {
+  font-size: 25px;
+  color: #9a7229;
+  font-weight: bold;
+  margin: 0;
+  padding: 30px 0 0 0;
+}
+.btn-kyc {
+  max-width: 200px;
+  margin: 0 auto;
+  line-height: 28px;
+}
+.kyc-section h2 {
+  font-size: 27px;
+  color: #9a7229;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0 20px 0;
+  text-align: center;
+}
+.kyc-section h4 {
+  font-size: 20px;
+  color: #333333;
+  font-weight: normal;
+  margin: 0;
+  padding: 0 0 20px 0;
+  text-align: center;
+}
+#kyc-details .form-control {
+  height: 40px;
+  font-size: 14px;
+  padding-left: 15px;
+}
+#kyc-details .form-group {
+  margin-bottom: 15px;
+}
+#kyc-details .kyc-space {
+  margin-bottom: 15px;
+  padding-top: 10px;
+}
+.chk {
+  position: relative;
+  float: left;
+  margin: 0 15px 0 0;
+}
+.chk input {
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+.chk span {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #2f1991;
+  vertical-align: top;
+  background: #fff;
+}
+.chk input:checked + span {
+  background: url(../img/checkbox-icon.png) center center no-repeat;
+}
+.agreement-list {
+  padding: 20px 0 10px 0;
+}
+.agreement-list ul {
+  padding: 0;
+  margin: 0;
+}
+.agreement-list ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.agreement-list ul li .box {
+  margin: 0 0 30px 0;
+}
+
+.agreement-list ul li .box p {
+  font-size: 17px;
+  color: #333;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+.agreement-list ul li .box p a {
+  color: #875914;
+  line-height: 27px;
+}
+.agreement-list ul li .box p a:hover {
+  text-decoration: underline;
+}
+select.form-control {
+  font-size: 14px;
+  color: #333333;
+  font-weight: normal;
+  background: url(../img/select-box-arrow.png) right center no-repeat #f3f0e0;
+  border: 1px solid #93661a;
+  border-radius: 3px;
+  height: 40px;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+}
+select.form-control1 {
+  font-weight: normal;
+  background: url(../img/select-box-arrow.png) right center no-repeat #f3f0e0;
+
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+}
+.cal-fr input {
+  background: url(../img/cal-icon.png) right center no-repeat #f3f0e0;
+}
+
+.guide-box {
+  padding: 10px 0 0 0;
+}
+.guide-box h3 {
+  font-size: 20px;
+  color: #93671b;
+  font-weight: normal;
+  margin: 0;
+  padding: 0 0 15px 0;
+}
+.guide-box p {
+  font-size: 17px;
+  line-height: 24px;
+  color: #666666;
+  font-weight: normal;
+  margin: 0;
+  padding: 0 0 20px 0;
+}
+.guide-box ul {
+  margin: 0 0 0 -30px;
+  padding: 0;
+}
+.guide-box ul li {
+  margin: 0;
+  list-style: none;
+  float: left;
+  width: 50%;
+  padding: 0 0 30px 30px;
+}
+.guide-box ul li .box {
+  text-align: center;
+  background: rgb(190, 152, 66);
+  padding: 10px;
+}
+
+.fa-file-pdf-o:before {
+  color: #8e6116;
+  font-size: 20px;
+}
+.error,
+.errors-wallet.error,
+.buyError.error {
+  font-size: 14px;
+  font-weight: 600;
+  color: red;
+  line-height: 2;
+  text-transform: capitalize;
+  /*display: none;*/
+}
+textarea.form-control {
+  font-size: 20px;
+  word-spacing: 18px;
+  padding-left: 10px;
+}
+.verifyMnemonic .success,
+.errors-wallet.success,
+.buyError.success {
+  font-size: 16px;
+  color: #0f0;
+  margin: 10px;
+  /*display: none;*/
+}
+
+td {
+  max-width: 130px;
+  word-wrap: break-word;
+}
+
+input#refrral_code {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  border: 0;
+  color: #333333;
+  width: 100%;
+  pointer-events: none;
+}
+
+input#refrral_code:focus {
+  border: 0;
+  outline: 0;
+  box-shadow: 0;
+}
+h1.qr_text {
+  color: black;
+  font-size: 40px;
+  font-weight: 800;
+  padding: 20px;
+}
+
+.qr_img {
+  max-width: 300px;
+  width: 100%;
+}
+.myaddress {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100% !important;
+  padding: 53px 0 105px 0;
+}
+
+.cr-code-box {
+  clear: both;
+  overflow: hidden;
+}
+.cr-code-box select {
+  width: 80px;
+  float: left;
+  padding: 0 14px !important;
+}
+.cr-code-box input {
+  width: 285px;
+  float: right;
+}
+h6.warning_msg {
+  color: red;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
+img.img-circle {
+  height: 40px;
+  width: 40px;
+}
+.wallet-sl-box ul li.active a {
+  color: #8b5e10 !important;
+}
+.jq-toast-wrap.bottom-left {
+  word-wrap: break-word;
+}
+.app-bonuses-section {
+  max-width: 100%;
+}
+
+#profile .form-group img {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  width: 17px;
+}
+#profile .form-control {
+  height: 40px;
+  font-size: 14px;
+}
+.dashboard-box-css {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fa-usd,
+.fa-btc {
+  font-size: 25px;
+}
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+.kyc-color {
+  color: #000;
+}
+.etherimg {
+  width: 12px;
+  /* text-align: justify; */
+  margin-left: 8px;
+  margin-top: 4px;
+}
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}

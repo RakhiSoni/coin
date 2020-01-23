@@ -1,0 +1,47 @@
+<div class="login-main-section">
+    <div class="login-part">
+        <div class="login-logo">
+            <a href="#"><img src="{{constants.ACCESSURL}}img/logo.png" alt=""></a>
+        </div>
+        <h1>The Abundance Coin</h1>
+        <div class="login-form">
+            <h2>Log In</h2>
+            <!--<form action="{{constants.API_URL}}Members/login" method="post" class="ajax-login">-->
+            <form action="{{constants.ACCESSURL}}api/users/login" method="post" class="ajax-login">
+                <div class="error"></div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group email-fr">
+                            <img src="img/email-icon.png">
+
+                            <input class="form-control" name="email" type="email" placeholder="Email" required="">
+                        </div>
+                        <div class="form-group pw-fr">
+                            <img src="img/password-icon.png">
+                            <input class="form-control" name="password" type="password" placeholder="Password"
+                                required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="forget-link">
+                    <a href="#" data-toggle="modal" data-target="#Modal-forgot-password">Forgot Password?</a>
+                </div>
+                <div class="">
+                    <button class=" btn btn-primary" type="submit">
+                        Login
+                    </button>
+                </div>
+            </form>
+            <!--            <div class="login-social-btn clearfix">
+                            <a href="{{frontConstant.ACCESSURL}}facebook_login"><img src="{{frontConstant.ACCESSURL}}img/fb-btn.png" alt=""></a>
+                            <a href="{{frontConstant.ACCESSURL}}google_login"><img src="{{frontConstant.ACCESSURL}}img/gp-btn.png" alt=""></a>
+                        </div>-->
+            <div class="signup-link" style="padding-top: 20px;">
+                <p>Don’t have an account yet? <a href="{{frontConstant.ACCESSURL}}register">Sign Up</a></p>
+            </div>
+            {{!-- <div class="login-btm-img">
+                <img src="{{constants.ACCESSURL}}img/login-btm-img.png" alt="">
+            </div> --}}
+        </div>
+    </div>
+</div>

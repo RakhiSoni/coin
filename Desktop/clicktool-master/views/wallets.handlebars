@@ -1,0 +1,57 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="title-table title-lft saved-top-bar clearfix">
+                        <div class="errors-wallet"></div>
+                        <h2>My Saved Wallets</h2>
+                        <div class="add-btn">
+                            <a class="btn btn-primary" href="{{constants.ACCESSURL}}users/addWallet">Add New</a>
+                        </div>
+                    </div>
+                    <div class="table-responsive comman-table choose-wallet-table saved-wallet-table">
+                        <table>
+                            <tr>
+                                <th>Public Address</th>
+                                <th>Balance</th>
+                                <th>Ethereum</th>
+                                <th>Wallet Name</th>
+                                <th>Action</th>
+                            </tr>
+                            {{#each wallets}}
+                            <tr id="delete-{{this._id}}">
+                                <td>
+                                    <div class="checkbox-wl">
+                                        <input type="radio" value="{{this._id}}" name="choose_wallet"
+                                            {{#if this.defaultAddress}}checked{{/if}}>
+                                        <span></span>
+                                    </div>
+                                    {{this.walletAddress}}
+                                </td>
+                                <td>{{this.balance}}</td>
+                                <td>{{this.ethers}}</td>
+                                <td>{{this.name}}</td>
+                                <td>
+                                    <div class="ac-btn3">
+                                        <a href="{{constants.ACCESSURL}}/users/editWallet?wallet={{this._id}}"><i
+                                                class="fa fa-pencil edit-wallet" aria-hidden="true"></i></a>
+                                        <a data-toggle="modal" data-target="#Modal-delete" href="#"
+                                            class="delete_model_popup" data-bind="{{this._id}}"><i class="fa fa-trash"
+                                                aria-hidden="true"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </table>
+                    </div>
+                    <div class="set-btn clearfix">
+                        <input class="btn btn-primary default_model_popup" data-toggle="modal"
+                            data-target="#Modal-set-default" type="submit" value="Set as Default">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

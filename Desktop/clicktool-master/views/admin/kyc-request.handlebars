@@ -1,0 +1,200 @@
+<div class="wrapper wrapper-content" id="kyc-request-a">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="box-heading">
+                        <h2 id="kyc"> KYC Requests
+                        </h2>
+                    </div>
+                    <!-- tabitation content -->
+                    <div class="property-dtl-tab investor-details">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#prt-tab0" aria-controls="home" role="tab" data-toggle="tab"
+                                    aria-expanded="true">Pending
+                                </a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#prt-tab1" aria-controls="profile" role="tab" data-toggle="tab"
+                                    aria-expanded="false">Failed
+                                </a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#prt-tab2" aria-controls="profile" role="tab" data-toggle="tab"
+                                    aria-expanded="false">Verified
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content ">
+                            <div role="tabpanel" class="tab-pane active" id="prt-tab0">
+                                <div class="table-responsive coman-table" id="owner-detail-btn">
+                                    <table class="table dataTables-example-0">
+                                        <thead>
+                                            <tr>
+                                                <th data-orderable="false">Profile Pic</th>
+                                                <th>Name
+                                                </th>
+                                                <th>Email
+                                                </th>
+                                                <th>Date
+                                                </th>
+                                                <th data-orderable="false">Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each result.pending}}
+                                            <tr>
+                                                <td>
+                                                    <div class="image img-rounded profile-image-table">
+                                                        {{#ifCond this.profilePic '==' ''}}
+                                                        <img src="{{constants.ACCESSURL}}/img/my-ac-img.png" alt=""
+                                                            class="profile-pic">
+                                                        {{else}}
+                                                        <img src="{{../constants.ACCESSURL}}uploads/profile_picture/{{this.profilePic}}"
+                                                            alt="">
+                                                        {{/ifCond}}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    {{this.name}}
+                                                </td>
+                                                <td>{{this.email}}</td>
+                                                <td> {{this.registeredDate}}
+                                                </td>
+                                                <td>
+                                                    <div class="action-btn">
+                                                        <a href="{{../constants.ACCESSURL}}admin/kyc-details?userId={{this._id}}"
+                                                            onclick="kycTabulation(this)">
+                                                            <i class="fa fa-eye kyc-tab" aria-hidden="true"
+                                                                id="pendingAction">
+                                                            </i>
+                                                        </a>
+                                                        <!--   <a href="{{constants.ACCESSURL}}admin/#" data-toggle="modal" data-target="#modal-delete-Assets-Owner"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {{/each}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="prt-tab1">
+                                <div class="table-responsive coman-table" id="owner-detail-btn">
+                                    <div class="table-responsive coman-table" id="owner-detail-btn">
+                                        <table class="table dataTables-example-0">
+                                            <thead>
+                                                <tr>
+                                                    <th data-orderable="false">Profile Pic</th>
+                                                    <th>Name
+                                                    </th>
+                                                    <th>Requested Date
+                                                    </th>
+                                                    <th>Failed Reason
+                                                    </th>
+                                                    <th data-orderable="false">Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each result.declined}}
+                                                <tr>
+                                                    <td>
+                                                        <div class="image img-rounded profile-image-table">
+                                                            {{#ifCond this.profilePic '==' ''}}
+                                                            <img src="{{constants.ACCESSURL}}/img/my-ac-img.png" alt=""
+                                                                class="profile-pic">
+                                                            {{else}}
+                                                            <img src="{{../constants.ACCESSURL}}uploads/profile_picture/{{this.profilePic}}"
+                                                                alt="">
+                                                            {{/ifCond}}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        {{this.name}}
+                                                    </td>
+                                                    <td>{{this.registeredDate}}
+                                                    </td>
+                                                    <td>{{this.failReason}}
+                                                    </td>
+                                                    <td>
+                                                        <div class="action-btn">
+                                                            <a href="{{../constants.ACCESSURL}}admin/kyc-details-view?userId={{this._id}}"
+                                                                onclick="kycTabulation(this)">
+                                                                <i class="fa fa-eye kyc-tab" aria-hidden="true"
+                                                                    id="failedAction">
+                                                                </i>
+                                                            </a>
+                                                            <!--   <a href="{{constants.ACCESSURL}}admin/#" data-toggle="modal" data-target="#modal-delete-Assets-Owner"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                {{/each}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="prt-tab2">
+                                <div class="table-responsive coman-table" id="owner-detail-btn">
+                                    <div class="table-responsive coman-table" id="owner-detail-btn">
+                                        <table class="table dataTables-example-0">
+                                            <thead>
+                                                <tr>
+                                                    <th data-orderable="false">Profile Pic</th>
+                                                    <th>Name
+                                                    </th>
+                                                    <th>Requested Date
+                                                    </th>
+                                                    <th data-orderable="false">Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each result.approved}}
+                                                <tr>
+                                                    <td>
+                                                        <div class="image img-rounded profile-image-table">
+                                                            {{#ifCond this.profilePic '==' ''}}
+                                                            <img src="{{constants.ACCESSURL}}/img/my-ac-img.png" alt=""
+                                                                class="profile-pic">
+                                                            {{else}}
+                                                            <img src="{{../constants.ACCESSURL}}uploads/profile_picture/{{this.profilePic}}"
+                                                                alt="">
+                                                            {{/ifCond}}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        {{this.name}}
+                                                    </td>
+                                                    <td> {{this.registeredDate}}
+                                                    </td>
+                                                    <td>
+                                                        <div class="action-btn">
+                                                            <a href="{{../constants.ACCESSURL}}admin/kyc-details-view?userId={{this._id}}"
+                                                                onclick="kycTabulation(this)">
+                                                                <i class="fa fa-eye kyc-tab" aria-hidden="true"
+                                                                    id="acceptAction">
+                                                                </i>
+                                                            </a>
+                                                            <!--   <a href="{{constants.ACCESSURL}}admin/#" data-toggle="modal" data-target="#modal-delete-Assets-Owner"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                {{/each}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,161 @@
+<div class="wrapper wrapper-content">
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content" id="history">
+                    <div class="box-heading">
+                        <a href="{{constants.ACCESSURL}}admin/kyc-request">
+                            <h2> <img src="img/back-icon.png" class="img-back">KYC Request Details
+                            </h2>
+                        </a>
+                    </div>
+                    <a href="" class="downloadLink"></a>
+                    <div class="border-solid m-b-lg">
+                        <div class="text-right m-b-md">
+                            <a href="" class="btn m-r-sm btn-primary btn-small min-135" data-dismiss="modal"
+                                data-toggle="modal" id="kyc-approve">Approve</a>
+                            <a href="#reject-modal" class="btn btn-default min-135 btn-small" data-dismiss="modal"
+                                data-toggle="modal">Reject</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row ">
+                                    <input type="hidden" id="hiddenId" value="{{result._id}}">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="detail-title-a">
+                                            <p><span>First Name:</span>{{result.kyc.firstname}}</p>
+                                            <p><span>Last Name:</span>{{result.kyc.lastname}}</p>
+                                            <p><span>DOB:</span>{{result.kyc.dateOfBirth}}</p>
+                                            <p><span>Email Address:</span>{{result.kyc.email}}</p>
+                                            <p><span>Phone Number: </span>{{result.kyc.phone}}</p>
+                                            <p><span>Document Type:</span>{{result.kyc.docID}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="detail-title-a">
+                                            <p><span>Counrty:</span>{{result.kyc.country}}</p>
+                                            <p><span>State:</span>{{result.kyc.state}}</p>
+                                            <p><span>City:</span>{{result.kyc.city}}</p>
+                                            <p><span>KYC Status:</span>
+                                                {{#ifCond result.kyc.isVerified '==' '0'}} Pending{{/ifCond}}
+                                                {{#ifCond result.kyc.isVerified '==' '1'}} UnderReview {{/ifCond}}
+                                                {{#ifCond result.kyc.isVerified '==' '2'}} Verified {{/ifCond}}
+                                                {{#ifCond result.kyc.isVerified '==' '3'}} Failed {{/ifCond}}
+                                            </p>
+                                            <p><span>Date:</span>{{formatDate result.kyc.time_unix}}</p>
+                                            {{#ifCond result.kyc.isVerified '==' '3' }}
+                                            <p><span>Reason:</span>{{result.kyc.failReason}}</p>
+                                            {{/ifCond}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- kyc documents -->
+                    <div class="box-heading">
+                        <h2 class="m-t-md m-b-md">KYC Documents</h2>
+                    </div>
+                    <div class="row" id="kyc-doc">
+                        {{#ifCond result.kyc.docImage '!=' ''}}
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="box">
+                                <img src="{{constants.ACCESSURL}}uploads/kyc/docImage/{{result.kyc.docImage}}" alt=""
+                                    class="myImg kyc-img-size">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        {{/ifCond}}
+                        {{#ifCond result.kyc.docHoldingImage '!=' ''}}
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="box">
+                                <img src="{{constants.ACCESSURL}}uploads/kyc/docHoldingImage/{{result.kyc.docHoldingImage}}"
+                                    alt="" class="myImg kyc-img-size">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        {{/ifCond}}
+                        {{#ifCond result.kyc.utilityBill '!=' ''}}
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="box">
+                                <img src="{{constants.ACCESSURL}}uploads/kyc/utilityBill/{{result.kyc.utilityBill}}"
+                                    alt="" class="myImg kyc-img-size">
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        {{/ifCond}}
+                    </div>
+                    <!--// kyc documents -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="myModal" class="modal kyc myModal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <span><i class="fa fa-download  download downloadImage" aria-hidden="true"></i></span>
+    <img class="modal-content-A img01">
+    <!-- <div id="caption"></div> -->
+</div>
+
+<div class="modal coman-modal  fade" id="cong-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog  modal-a" role="document">
+        <div class="modal-content text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="success-msg-icon">
+                <i class="fa fa-check-circle m-b-0" aria-hidden="true"></i>
+            </div>
+            <h2 id="kycRejectMsg"></h2>
+        </div>
+    </div>
+</div>
+<div class="modal coman-modal  fade" id="reject-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog  modal-a" role="document">
+        <div class="modal-content text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <form action="{{constants.ACCESSURL}}admin/kyc-status-update/{{result._id}}" class="kyc-reject">
+                <h2>Reason</h2>
+                <div class="form-group">
+                    <textarea class="form-control kycRejectMsg" placeholder="Enter the Reason of Rejection"
+                        required></textarea>
+                </div>
+                <button class="btn m-r-sm btn-primary btn-small max-83">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal coman-modal  fade" id="sent-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog  modal-a" role="document">
+        <div class="modal-content text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="success-msg-icon">
+                <i class="fa fa-check-circle m-b-0" aria-hidden="true"></i>
+            </div>
+            <h2 id="kycAcceptMsg"></h2>
+        </div>
+    </div>
+</div>
+<div class="modal coman-modal  fade" id="failed-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog  modal-a" role="document">
+        <div class="modal-content text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="success-msg-icon">
+                <i class="fa fa-times-circle"></i>
+            </div>
+            <h2 id="kycError"></h2>
+        </div>
+    </div>
+</div>

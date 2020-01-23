@@ -1,0 +1,28 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="title-table title-lft clearfix">
+                        <h2>Backup Phrase</h2>
+                    </div>
+                    <div class="phrase-part">
+                        <div class="phrase-icon">
+                            <img src="{{constants.ACCESSURL}}img/phrase-icon.png" alt="">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="generatedMnemonic"
+                                placeholder="weapon comic square scissors vacant net skull lady garden faculty kind save"
+                                name="mnemonic" readonly>{{wallet.mnemonic}}</textarea>
+                        </div>
+                        <div class="phrase-btn">
+                            <a href="#" class="copy_mnemonic">Copy</a>
+                            <a class="btn btn-primary"
+                                href="{{constants.ACCESSURL}}users/verify-recovery-phrase">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

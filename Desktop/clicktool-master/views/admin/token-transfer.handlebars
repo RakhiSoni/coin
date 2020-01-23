@@ -1,0 +1,143 @@
+<div class="wrapper wrapper-content" id="kyc-request-a">
+    <div class="box-heading">
+        <h2>Token Transfer</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content" id="history">
+                    <div class="property-dtl-tab tranfer">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#prt-tab0" aria-controls="home" role="tab" data-toggle="tab"
+                                    aria-expanded="true">General Transfer
+                                </a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#prt-tab1" aria-controls="profile" role="tab" data-toggle="tab"
+                                    aria-expanded="false">User Transfer
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content ">
+                            <div role="tabpanel" class="tab-pane active" id="prt-tab0">
+                                <form action="{{constants.ACCESSURL}}admin/generalTranferTokens" class="generalToken"
+                                    method="POST">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group text-left">
+                                                <label>Wallet Address :</label>
+                                                <input type="text" class="form-control" placeholder="Wallet  Address"
+                                                    onkeypress="return minLengthCheck(event)" id="walletAdd" required>
+                                            </div>
+                                            <div class="form-group text-left">
+                                                <label>Amount paid:</label>
+                                                <input type="number" class="form-control" placeholder="Amount"
+                                                    onkeypress="return minLengthCheck(event)" id="generalAmout"
+                                                    required>
+                                            </div>
+                                            <button class="btn btn-primary btn-small m-t-sm" style="margin-left: 85%;"
+                                                id="general">Transfer Token</button>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group text-left">
+                                                <label>Token Amount:</label>
+                                                <input type="number" class="form-control" placeholder="Token Amount"
+                                                    onkeypress="return minLengthCheck(event)" id="generalToken"
+                                                    required>
+                                            </div>
+                                            <div class="form-group  text-left">
+                                                <label>Currency:</label>
+                                                <select class="form-control" id="generalCurrency" required>
+                                                    <option>ETH</option>
+                                                    <option>BTC</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="prt-tab1">
+                                <form action="{{constants.ACCESSURL}}admin/tranferTokens" class="userToken"
+                                    method="POST">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group text-left">
+                                                <label>User Email:</label>
+                                                <input type="email" class="form-control" placeholder="User Email"
+                                                    onkeypress="return minLengthCheck(event)" id="userEmail" required>
+                                            </div>
+
+                                            <div class="form-group text-left">
+                                                <label>Amount paid:</label>
+                                                <input type="number" class="form-control" placeholder="Amount"
+                                                    onkeypress="return minLengthCheck(event)" id="userAmount" required>
+                                            </div>
+
+                                            <button class="btn btn-primary btn-small m-t-sm" style="margin-left: 85%;"
+                                                id="user">
+                                                Transfer Token</button>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group text-left">
+                                                <label>Token Amount :</label>
+                                                <input type="number" class="form-control" placeholder="Token Amount"
+                                                    onkeypress="return minLengthCheck(event)" id="userToken" required>
+                                            </div>
+                                            <div class="form-group  text-left">
+                                                <label>Currency:</label>
+                                                <select class="form-control" id="userCurrency" required>
+                                                    <option>ETH</option>
+                                                    <option>BTC</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div id="myModal" class="modal kyc ">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+    <!-- <div id="caption"></div> -->
+</div>
+<div class="modal coman-modal  fade" id="cong-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog  modal-a" role="document">
+        <div class="modal-content text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="success-msg-icon">
+                <i class="fa fa-check-circle m-b-0" aria-hidden="true"></i>
+            </div>
+            <h2 id="successMsg"></h2>
+        </div>
+    </div>
+</div>
+
+<div class="modal coman-modal  fade" id="failed-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog  modal-a" role="document">
+        <div class="modal-content text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="success-msg-icon">
+                <i class="fa fa-times-circle"></i>
+
+            </div>
+            <h2 id="failedMsg"></h2>
+        </div>
+    </div>
+</div>

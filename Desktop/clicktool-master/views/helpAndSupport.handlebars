@@ -1,0 +1,177 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content ibox-content-padd0">
+                    <div class="referral2-section">
+                        <div class="ref2-menu">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#ref-tab1" aria-controls="home"
+                                        role="tab" data-toggle="tab">FAQs</a></li>
+                                <li role="presentation"><a href="#ref-tab2" aria-controls="profile" role="tab"
+                                        data-toggle="tab">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="ref-tab1">
+                                <div class="faq-part">
+                                    <div class="faq-one">
+                                        <div class="faq-ques">
+                                            <h3><span>Q</span>Aenean massa Cum sociis natoque penati</h3>
+                                        </div>
+                                        <div class="faq-ans">
+                                            <p><span>A</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                                                penatibus et magnis dis parturient montes, nascetur Donec quam felis,
+                                                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+                                                quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                                                arcu. In enim justo, imperdiet a, venenatis vitae, justo. Nullam dictum
+                                                felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+                                                elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-one">
+                                        <div class="faq-ques">
+                                            <h3><span>Q</span>Aenean massa Cum sociis natoque penati</h3>
+                                        </div>
+                                        <div class="faq-ans">
+                                            <p><span>A</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                                                penatibus et magnis dis parturient montes, nascetur Donec quam felis,
+                                                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+                                                quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                                                arcu. In enim justo, imperdiet a, venenatis vitae, justo. Nullam dictum
+                                                felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+                                                elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-one">
+                                        <div class="faq-ques">
+                                            <h3><span>Q</span>Aenean massa Cum sociis natoque penati</h3>
+                                        </div>
+                                        <div class="faq-ans">
+                                            <p><span>A</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                                                penatibus et magnis dis parturient montes, nascetur Donec quam felis,
+                                                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+                                                quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                                                arcu. In enim justo, imperdiet a, venenatis vitae, justo. Nullam dictum
+                                                felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+                                                elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-one">
+                                        <div class="faq-ques">
+                                            <h3><span>Q</span>Aenean massa Cum sociis natoque penati</h3>
+                                        </div>
+                                        <div class="faq-ans">
+                                            <p><span>A</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                                                penatibus et magnis dis parturient montes, nascetur Donec quam felis,
+                                                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+                                                quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                                                arcu. In enim justo, imperdiet a, venenatis vitae, justo. Nullam dictum
+                                                felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+                                                elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="ref-tab2">
+                                <div class="contactus-section">
+                                    <div class="row">
+                                        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="contact-form">
+                                                <h2>Get In Touch</h2>
+                                                <form
+                                                    action="{{constants.ACCESSURL}}api/users/contact-us?access_token={{user._id}}"
+                                                    method="post" class="sendInquiry">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <div class="form-group user-fr">
+                                                                <img src="/img/user-fr-icon.png">
+                                                                <input class="form-control" type="text"
+                                                                    onkeypress="return minLengthCheck(event)"
+                                                                    placeholder="Name" name="name"
+                                                                    value="{{user.user.firstname}} {{user.user.lastname}}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <div class="form-group phone-fr">
+                                                                <img src="../img/phone-fr-icon.png">
+                                                                <input class="form-control" type="text"
+                                                                    onkeypress="return minLengthCheck(event)"
+                                                                    oninput="return maxLengthCheck(this)" maxlength="13"
+                                                                    minlength="7" placeholder="Phone" name="phone"
+                                                                    value="{{user.user.phone}}">
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="form-group email-fr">
+                                                                <img src="/img/email-icon.png">
+                                                                <input class="form-control" type="text"
+                                                                    onkeypress="return minLengthCheck(event)"
+                                                                    placeholder="Email" name="email"
+                                                                    value="{{user.user.email}}" readonly="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="form-group message-fr">
+                                                                <textarea class="form-control" placeholder="Message"
+                                                                    onkeypress="return minLengthCheck(event)"
+                                                                    name="message"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cnt-btn">
+                                                        <button class="btn btn-primary" type="submit">Send</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="contact-info">
+                                                <h2>Contact Info</h2>
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                                    commodo ligula eget dolor. Aenean massa. Cum sociis</p>
+                                                <div class="cnt-info">
+                                                    <a href="mailto:help@abundance.com"> <img
+                                                            src="../img/my-ac-icon2.png">
+                                                        help@abundance.com</a>
+                                                </div>
+                                                <div class="cnt-info cnt-info-b">
+                                                    <img src="../img/my-ac-icon3.png">
+                                                    <a href="tel:1800584254">1800 584 254</a>
+                                                </div>
+                                                <div class="cnt-info cnt-info-c">
+                                                    <img src="../img/web-icon.png">
+                                                    <a href="#">www.abundance.com</a>
+                                                </div>
+                                                <h3>Follow Us On:</h3>
+                                                <div class="follow-box clearfix">
+                                                    <a class="" href="#"><i class="fa fa-facebook-square"
+                                                            aria-hidden="true"></i></a>
+                                                    <a class="" href="#"><i class="fa fa-linkedin-square"
+                                                            aria-hidden="true"></i></a>
+                                                    <a class="" href="#"><i class="fa fa-twitter-square"
+                                                            aria-hidden="true"></i></a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

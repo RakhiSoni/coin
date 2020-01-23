@@ -1,0 +1,281 @@
+<div class="wrapper wrapper-content" id="kyc-request-a">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="box-heading">
+                        <h2>Wallet
+                        </h2>
+                    </div>
+                    <!-- tabitation content -->
+                    <div class="property-dtl-tab investor-details">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#prt-tab0" aria-controls="home" role="tab" data-toggle="tab"
+                                    aria-expanded="true">Ethereum
+                                </a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#prt-tab1" aria-controls="profile" role="tab" data-toggle="tab"
+                                    aria-expanded="false">Bitcoin
+                                </a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#prt-tab2" aria-controls="profile" role="tab" data-toggle="tab"
+                                    aria-expanded="false">USD
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content ">
+                            <div role="tabpanel" class="tab-pane active" id="prt-tab0">
+                                <div class="row">
+                                    <div class="col-lg-6  col-md-12 col-sm-12 col-xs-12">
+                                        <div class="box-wallet">
+                                            <h4>Balance</h4>
+                                            <h3>
+                                                {{#if result.etherWallet.walletbalance}}
+                                                {{result.etherWallet.walletbalance}}
+                                                {{else}}
+                                                0.00
+                                                {{/if}}
+
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6  col-md-12 col-sm-12 col-xs-12">
+                                        <div class="box-wallet">
+                                            <h4>Wallet Address</h4>
+                                            <h3>
+                                                {{#if result.etherWallet.walletaddress}}
+                                                {{result.etherWallet.walletaddress}}
+                                                {{else}}
+                                                -
+                                                {{/if}}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-heading">
+                                    <h2>Transactions History
+                                    </h2>
+                                </div>
+                                <div class="table-responsive coman-table" id="owner-detail-btn">
+                                    <table class="table dataTables-example">
+                                        <thead>
+                                            <tr>
+                                                <th>Date & Time
+                                                </th>
+                                                <th>To
+                                                </th>
+                                                <th>From
+                                                </th>
+                                                <th>Amount
+                                                </th>
+                                                <th>Hash
+                                                </th>
+                                                <th data-orderable="false">Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each result.etherWallet.transactions}}
+                                            <tr>
+                                                <td style="font-size: 12px;">{{this.timeStamp}}
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    {{this.to}}
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    {{this.from}}
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    {{this.value}}
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    {{this.hash}}
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    <div class="action-btn">
+                                                        <a href="{{this.txURL}}">View On Etherscan
+                                                            {{!-- <i class="fa fa-eye" aria-hidden="true">
+                                                            </i> --}}
+                                                        </a>
+                                                        <!--   <a href="{{constants.ACCESSURL}}admin/#" data-toggle="modal" data-target="#modal-delete-Assets-Owner"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {{/each}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="prt-tab1">
+                                <div class="row">
+                                    <div class="col-lg-6  col-md-12 col-sm-12 col-xs-12">
+                                        <div class="box-wallet">
+                                            <h4>Balance</h4>
+                                            <h3>
+                                                {{#if result.bitcoinWallet.walletbalance}}
+                                                {{result.bitcoinWallet.walletbalance}}
+                                                {{else}}
+                                                0.00
+                                                {{/if}}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6  col-md-12 col-sm-12 col-xs-12">
+                                        <div class="box-wallet">
+                                            <h4>Wallet Address</h4>
+                                            <h3>
+                                                {{#if result.bitcoinWallet.walletaddress}}
+                                                {{result.bitcoinWallet.walletaddress}}
+                                                {{else}}
+                                                -
+                                                {{/if}}</h3>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="box-heading">
+                                    <h2>Transactions History
+                                    </h2>
+                                </div>
+                                <div class="table-responsive coman-table" id="owner-detail-btn">
+                                    <table class="table dataTables-example">
+                                        <thead>
+                                            <tr>
+                                                <th>Date & Time
+                                                </th>
+                                                <th>To
+                                                </th>
+                                                <th>From
+                                                </th>
+                                                <th>Amount
+                                                </th>
+                                                <th>Hash
+                                                </th>
+                                                <th data-orderable="false">Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each result.bitcoinWallet.walletaddress}}
+                                            <tr>
+                                                <td style="font-size: 12px;">{{formatDate this.timeStamp}}
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    {{this.to}}
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    {{this.from}}
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    {{this.value}}
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    {{this.hash}}
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    <div class="action-btn">
+                                                        <a href="{{this.txURL}}">
+                                                            <i class="fa fa-eye" aria-hidden="true">
+                                                            </i>
+                                                        </a>
+                                                        <!--   <a href="{{constants.ACCESSURL}}admin/#" data-toggle="modal" data-target="#modal-delete-Assets-Owner"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {{/each}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="prt-tab2">
+                                <div class="row">
+                                    <div class="col-lg-6  col-md-12 col-sm-12 col-xs-12">
+                                        <div class="box-wallet">
+                                            <h4>Balance</h4>
+                                            <h3>
+                                                {{#if result.usdWallet.walletbalance}}
+                                                {{result.usdWallet.walletbalance}}
+                                                {{else}}
+                                                0.00
+                                                {{/if}}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6  col-md-12 col-sm-12 col-xs-12">
+                                        <div class="box-wallet">
+                                            <h4>Wallet Address</h4>
+                                            <h3>
+                                                {{#if result.usdWallet.walletaddress}}
+                                                {{result.usdWallet.walletaddress}}
+                                                {{else}}
+                                                -
+                                                {{/if}}</h3>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="box-heading">
+                                    <h2>Transactions History
+                                    </h2>
+                                </div>
+                                <div class="table-responsive coman-table" id="owner-detail-btn">
+                                    <table class="table dataTables-example">
+                                        <thead>
+                                            <tr>
+                                                <th>Date & Time
+                                                </th>
+                                                <th>To
+                                                </th>
+                                                <th>From
+                                                </th>
+                                                <th>Amount
+                                                </th>
+                                                <th>Hash
+                                                </th>
+                                                <th data-orderable="false">Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each result.usdWallet.walletaddress}}
+                                            <tr>
+
+                                                <td style="font-size: 12px;"> 24/05/2019 08:48 AM
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    0x25bdf
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    0x25bdf
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    25
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    ETH
+                                                </td>
+                                                <td style="padding-right: 60px; font-size: 12px;">
+                                                    0x25bdf
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    <div class="action-btn">
+                                                        <a href="{{constants.ACCESSURL}}admin/kyc-details">
+                                                            <i class="fa fa-eye" aria-hidden="true">
+                                                            </i>
+                                                        </a>
+                                                        <!--   <a href="{{constants.ACCESSURL}}admin/#" data-toggle="modal" data-target="#modal-delete-Assets-Owner"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {{/each}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

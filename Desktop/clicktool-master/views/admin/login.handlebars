@@ -1,0 +1,27 @@
+<div id="wrapper">
+    <!-- log in html -->
+    <div class=" coman-modal coman-modal-a" id="sign-in">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content  text-center">
+                <img src="img/logo-modal.png" alt="">
+                <h1>Sign In</h1>
+                <div class="form-group">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" class="form-control" placeholder="User Name" id="userName" required>
+                </div>
+                <div class="form-group pass-word">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" class="form-control" placeholder="Password" id="password" required>
+                </div>
+                <div class="forget-link">
+                    <a href="#" data-toggle="modal" data-target="#forgot-pw-modal">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary" id="loginBtn">SIGN IN</button>
+                {{!-- onclick="location.href='{{constants.ACCESSURL}}admin/dashboard'" --}}
+            </div>
+        </div>
+    </div>
+    <!-- log in html -->
+</div>
+
+<!-- forgot password -->

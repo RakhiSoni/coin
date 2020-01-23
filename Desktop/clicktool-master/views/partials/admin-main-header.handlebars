@@ -1,0 +1,56 @@
+<div id="page-wrapper" class="dark-bg" style="min-height: 615px;">
+    <div class="row top-menu2">
+        <nav class="navbar navbar-static-top dark-bg-header top-menu" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="user-info-box welcome tooltipa">
+                    <div class="dropdown d-flex">
+                        <span class="prof-img">
+                            {{!-- <a href="profile"> <img alt="image" class="img-back" src="img/user-image.png"></a> --}}
+                            {{#ifCond admin.profilePicture '==' ''}}
+                            <a href="profile"> <img src="{{constants.ASSESSURL}}/img/my-ac-img.png" alt=""
+                                    style="border-radius: 50%;"></a>
+                            {{else}}
+                            <a href="profile">
+                                <img src="{{constants.ACCESSURL}}uploads/profile_picture/{{admin.profilePicture}}"
+                                    alt="" style="border-radius: 50%;"></a>
+                            {{/ifCond}}
+                        </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+                            <span class="clear"> <span class="block m-t-xs">
+                                </span> <span class="text-muted text-xs block">{{admin.username}}<b
+                                        class="caret"></b></span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="profile">Profile</a></li>
+                            <li><a data-toggle="modal" data-target="#admin-logout-modal">Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="modal fade" id="admin-logout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        style="padding-top: 120px;">
+        <div class="modal-dialog  modal-a" role="document">
+            <div class="modal-content text-center" style="padding-top: 45px;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h2>Are You Sure You Want To Logout ?</h2>
+                <div class="text-center" style="padding-bottom: 5%;">
+                    <a href="{{constants.ACCESSURL}}admin/logout"><button class=" btn  btn-primary btn-small m-t-sm"
+                            style="margin-right: 10px;">Yes</button></a>
+                    <button class="btn  btn-primary btn-small m-t-sm" data-dismiss="modal"
+                        aria-label="Close">No</button>
+                </div>
+
+            </div>
+        </div>
+    </div>

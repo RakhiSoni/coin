@@ -1,0 +1,12 @@
+node_modules/
+yarn.lock
+package-lock.json
+.idea/
+/nbproject/private/
+/nbproject
+/constants.js
+/front_constant.js
+# modules/constants.js
+# modules/front_constant.js
+uploads/
+server.js

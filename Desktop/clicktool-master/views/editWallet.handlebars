@@ -1,0 +1,35 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="title-table title-lft">
+                        <h2>Edit Wallet</h2>
+                    </div>
+                    <div class="my-account-section add-new-wallet-section">
+                        <form action="{{constants.ACCESSURL}}users/editWalletRequest" method="post" class="editWallet">
+                            <div class="wallet-img">
+                                <img src="{{constants.ACCESSURL}}img/wallet-img.png" alt="">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="name" type="text" placeholder="Enter Name"
+                                    onkeypress="return minLengthCheck(event)" required="" value="{{wallet.name}}" />
+                                <input name="id" type="hidden" value="{{wallet._id}}" />
+                            </div>
+
+                            <div class="update-btn">
+                                <button class="btn btn-primary" type="submit">Update</button>
+                            </div>
+                            <div class="update-btn">
+                                <a href="{{constants.ACCESSURL}}users/wallets" class="btn btn-primary"> Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

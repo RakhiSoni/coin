@@ -1,0 +1,378 @@
+<div class="wrapper wrapper-content">
+   <div>
+      <h3 class="rate">Today's TAC Rates :</h3>
+      <div class="row margin-bottom-20">
+         <div class="col-lg-8">
+            <div class="rate-style">
+               <div class="app-ico-rounds__title">
+                  <div class="col-md-3 dashboard-box-css" style="" data-toggle="tooltip" data-placement="right" title=""
+                     data-original-title="US Dollar">
+                     <p class="mb-0" style="font-size: 20px;"><i class="fa fa-usd" aria-hidden="true"></i></p>
+                  </div>
+               </div>
+               <div>
+                  <label class="input-type" placeholder="1 TAC" value="1 TAC">1 TAC</label>
+               </div>
+               <div class="input-type"> = </div>
+               <div>
+                  <label class="input-type rate-space" placeholder="1 TAC" value="1 TAC">{{result.todayRate.dollarRate}}
+                     USD</label>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-8">
+            <div class="rate-style">
+               <div class="app-ico-rounds__title">
+                  <div class="col-md-3 dashboard-box-css" data-toggle="tooltip" data-placement="right" title=""
+                     data-original-title="US Dollar">
+                     <p class="mb-0" style="font-size: 20px;"><i class="fa fa-btc" aria-hidden="true"></i></p>
+                  </div>
+               </div>
+               <div>
+                  <label class="input-type" placeholder="1 TAC" value="1 TAC">1 TAC</label>
+               </div>
+               <div class="input-type"> = </div>
+               <div>
+                  <label class="input-type rate-space" placeholder="1 TAC"
+                     value="1 TAC">{{result.todayRate.bitcoinRate}} BTC</label>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-8">
+            <div class="rate-style" style="margin-bottom: 10px;">
+               <div class="app-ico-rounds__title">
+                  <div class="col-md-3 dashboard-box-css" data-toggle="tooltip" data-placement="right" title=""
+                     data-original-title="US Dollar">
+                     <p style="font-size: 20px;  display: block;"><img src="../img/ethereum.png" style="width: 23px;">
+                     </p>
+                  </div>
+               </div>
+               <div>
+                  <label class="input-type" placeholder="1 TAC" value="1 TAC">1 TAC</label>
+               </div>
+               <div class="input-type"> = </div>
+               <div>
+                  <label class="input-type rate-space" placeholder="1 TAC" value="1 TAC">{{result.todayRate.etherRate}}
+                     ETH</label>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="app-bonuses-section">
+         <div class="app-bonuses-section__table">
+            <div class="app-bonuses-section__rounds">
+               <app-ico-rounds>
+                  <div class="app-ico-rounds dashboard">
+                     <div
+                        class="app-ico-rounds__row-wrapper star-inserted {{#ifCond result.activeRound '==' '1' }} active {{else}} upcoming {{/ifCond}}">
+                        {{#ifCond result.activeRound '==' '1'}}
+                        <img class="app-ico-rounds__ribbon star-inserted" src="../img/active.svg">
+                        {{/ifCond}}
+                        <div class="app-ico-rounds__row">
+                           <div class="app-ico-rounds__title">
+                              <div class="app-ico-rounds__name">{{result.round1}} : </div>
+                              <div class="app-ico-rounds__date"> {{result.dateRange1}} </div>
+                           </div>
+                           <div class="app-ico-rounds__bonus"><b class="app-ico-rounds__bonus-value"><span
+                                    class="app-ico-rounds__dollar-sign">$</span> {{result.rate1}} </b><span
+                                 class="app-ico-rounds__bonus-title">Per token</span></div>
+                        </div>
+                     </div>
+
+                     <div
+                        class="app-ico-rounds__row-wrapper star-inserted {{#ifCond result.activeRound '==' '2' }} active {{else}} upcoming {{/ifCond}}">
+                        {{#ifCond result.activeRound '==' '2'}}
+                        <img class="app-ico-rounds__ribbon star-inserted" src="../img/active.svg">
+                        {{/ifCond}}
+                        <div class="app-ico-rounds__row">
+                           <div class="app-ico-rounds__title">
+                              <div class="app-ico-rounds__name">{{result.round2}} : </div>
+                              <div class="app-ico-rounds__date">{{result.dateRange2}} </div>
+                           </div>
+                           <div class="app-ico-rounds__bonus"><b class="app-ico-rounds__bonus-value"><span
+                                    class="app-ico-rounds__dollar-sign">$</span> {{result.rate2}} </b><span
+                                 class="app-ico-rounds__bonus-title">Per token</span></div>
+                        </div>
+                     </div>
+
+                     <div
+                        class="app-ico-rounds__row-wrapper star-inserted {{#ifCond result.activeRound '==' '3' }} active {{else}} upcoming {{/ifCond}}">
+                        {{#ifCond result.activeRound '==' '3'}}
+                        <img class="app-ico-rounds__ribbon star-inserted" src="../img/active.svg">
+                        {{/ifCond}}
+                        <div class="app-ico-rounds__row">
+                           <div class="app-ico-rounds__title">
+                              <div class="app-ico-rounds__name">{{result.round3}} : </div>
+                              <div class="app-ico-rounds__date">{{result.dateRange3}} </div>
+                           </div>
+                           <div class="app-ico-rounds__bonus"><b class="app-ico-rounds__bonus-value"><span
+                                    class="app-ico-rounds__dollar-sign">$</span> {{result.rate3}} </b><span
+                                 class="app-ico-rounds__bonus-title">Per token</span></div>
+                        </div>
+                     </div>
+
+                  </div>
+               </app-ico-rounds>
+            </div>
+
+         </div>
+
+         <div class="app-bonuses-section__timer-section">
+            <!---->
+            <div class="app-bonuses-section__table--row highlighted star-inserted">
+               <div class="app-bonuses-section__table--title">
+                  <div class="app-bonuses-section__table--name"> {{result.activeRoundName}} </div>
+                  <div class="app-bonuses-section__table--date"> {{result.activeRoundDate}} </div>
+               </div>
+               <div class="app-bonuses-section__table--bonus"><b
+                     class="app-bonuses-section__table--dollar-sign">$</b><span
+                     class="app-bonuses-section__table--bonus-value"><b> {{result.activeRoundRate}}</b><b
+                        class="app-bonuses-section__table--bonus-title">Per token</b></span></div>
+            </div>
+            <div class="app-bonuses-section__timer">
+               <div class="app-timer gradient-line inner-page">
+                  <div class="app-timer__clock">
+                     <!---->
+                     <h2 class="app-timer__title star-inserted"> {{result.headline}} : </h2>
+                     <div class="app-timer__time star-inserted" id="timend">
+                        <figure class="app-timer__digits">
+                           <div class="app-timer__time-value"><span class="app-timer__animation-target">
+                              </span><span class="app-timer__animation-target runAnimation" id="days"> </span>
+                           </div>
+                           <figcaption class="app-timer__time-label"> Days </figcaption>
+                        </figure>
+                        <span class="app-timer__separator">:</span>
+                        <figure class="app-timer__digits">
+                           <div class="app-timer__time-value"><span class="app-timer__animation-target">
+                              </span><span class="app-timer__animation-target runAnimation" id="hours"> </span>
+                           </div>
+                           <figcaption class="app-timer__time-label"> Hours </figcaption>
+                        </figure>
+                        <span class="app-timer__separator">:</span>
+                        <figure class="app-timer__digits">
+                           <div class="app-timer__time-value"><span class="app-timer__animation-target runAnimation">
+                              </span><span class="app-timer__animation-target" id="minutes"> </span></div>
+                           <figcaption class="app-timer__time-label"> Minute </figcaption>
+                        </figure>
+                        <span class="app-timer__separator">:</span>
+                        <figure class="app-timer__digits">
+                           <div class="app-timer__time-value"><span class="app-timer__animation-target">
+                              </span><span class="app-timer__animation-target runAnimation" id="secounds"> </span>
+                           </div>
+                           <figcaption class="app-timer__time-label"> Seconds </figcaption>
+                        </figure>
+                     </div>
+                  </div>
+                  <div class="app-timer__progress-bar-wrapper">
+                     <div class="app-timer__progress-bar" style="width: 42.5514%;"></div>
+                  </div>
+                  <!---->
+                  <!---->
+                  <div class="app-timer__button-buy star-inserted">
+                     <app-buy-tokens-button>
+                        <div class="app-buy-tokens-button inner-page">
+                           <!---->
+                           <!---->
+                           <button class="submit-button btn-color star-inserted" id="myBtn" type="button"><span>Buy
+                                 tokens</span></button>
+                        </div>
+                     </app-buy-tokens-button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+      <div id="myModal" class="modal">
+         <div class="modal-content">
+            <span class="close">×</span>
+            <div class="star-inserted">
+               <div class="app-wallets-section" id="dashboard__wallets-section">
+                  <div class="app-wallets-section__title-section">
+                     <h2 class="app-wallets-section__title ico-section-title">Buy tokens</h2>
+                  </div>
+                  <div>
+                     <!---->
+                  </div>
+                  <ul class="app-wallets-section__steps">
+                     <li class="app-wallets-section__step app-wallets-section__step--1 active" id="step1">
+                        <div class="app-wallets-section__step-description">
+                           <div class="app-wallets-section__step-number"></div>
+                           <div class="app-wallets-section__step-title">
+                              <h5>Calculate the cost of Abundance tokens (TAC )</h5>
+                              <p> Minimum investment amount is $1 </p>
+                           </div>
+                        </div>
+                        <div class="app-wallets-section__step-content">
+                           <div class="app-converter">
+                              <!---->
+                              <form class="app-converter__form" id="currency">
+                                 <div class="app-converter__field usd">
+                                    <div class="app-converter__currency-name">USD</div>
+                                    <div class="app-converter__input-wrapper">
+                                       <input id="usdRate" type="number" min="0"
+                                          onkeypress="return minLengthCheck(event)" autofocus="" placeholder="0"
+                                          value="" style="font-size: 40px;" onkeyup="tacFunction()">
+                                    </div>
+                                 </div>
+                                 <div class="app-converter__arrows">
+                                    <svg class="app-converter__arrow left" xmlns="http://www.w3.org/2000/svg"
+                                       viewBox="0 0 268.832 268.832" id="Capa_1">
+                                       <path
+                                          d="M265.17 125.577l-80-80c-4.88-4.88-12.797-4.88-17.678 0s-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.597-12.5 12.5s5.597 12.5 12.5 12.5h213.654l-58.66 58.66c-4.882 4.882-4.882 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66a12.47 12.47 0 0 0 8.839-3.661l79.998-80c4.882-4.882 4.882-12.796 0-17.678z">
+                                       </path>
+                                    </svg>
+                                    <svg class="app-converter__arrow right" xmlns="http://www.w3.org/2000/svg"
+                                       viewBox="0 0 268.832 268.832" id="Capa_1">
+                                       <path
+                                          d="M265.17 125.577l-80-80c-4.88-4.88-12.797-4.88-17.678 0s-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.597-12.5 12.5s5.597 12.5 12.5 12.5h213.654l-58.66 58.66c-4.882 4.882-4.882 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66a12.47 12.47 0 0 0 8.839-3.661l79.998-80c4.882-4.882 4.882-12.796 0-17.678z">
+                                       </path>
+                                    </svg>
+                                 </div>
+                                 <div class="app-converter__field ppt">
+                                    <div class="app-converter__currency-name"> TAC </div>
+                                    <div class="app-converter__input-wrapper">
+                                       <input id="tacRate" min="0" placeholder="0" type="number"
+                                          onkeypress="return minLengthCheck(event)" style="font-size: 40px;"
+                                          onkeyup="usdFunction()">
+                                    </div>
+                                 </div>
+                                 <div class="app-converter__arrows hide-modal ">
+                                    <svg class="app-converter__arrow left" xmlns="http://www.w3.org/2000/svg"
+                                       viewBox="0 0 268.832 268.832" id="Capa_1">
+                                       <path
+                                          d="M265.17 125.577l-80-80c-4.88-4.88-12.797-4.88-17.678 0s-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.597-12.5 12.5s5.597 12.5 12.5 12.5h213.654l-58.66 58.66c-4.882 4.882-4.882 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66a12.47 12.47 0 0 0 8.839-3.661l79.998-80c4.882-4.882 4.882-12.796 0-17.678z">
+                                       </path>
+                                    </svg>
+                                    <svg class="app-converter__arrow right" xmlns="http://www.w3.org/2000/svg"
+                                       viewBox="0 0 268.832 268.832" id="Capa_1">
+                                       <path
+                                          d="M265.17 125.577l-80-80c-4.88-4.88-12.797-4.88-17.678 0s-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.597-12.5 12.5s5.597 12.5 12.5 12.5h213.654l-58.66 58.66c-4.882 4.882-4.882 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66a12.47 12.47 0 0 0 8.839-3.661l79.998-80c4.882-4.882 4.882-12.796 0-17.678z">
+                                       </path>
+                                    </svg>
+                                 </div>
+                                 <div class="app-converter__field ppt hide-modal">
+                                    <div class="app-converter__currency-name" id="setDivName"> -- </div>
+                                    <div class="app-converter__input-wrapper">
+                                       <input type="number" placeholder="0" onkeypress="return minLengthCheck(event)"
+                                          min="0" type="text" style="font-size: 40px;" id="rate" value="">
+                                    </div>
+                                 </div>
+                                 <!---->
+                                 <!---->
+                              </form>
+                              <div class="app-converter__bonuses-wrapper hidden"><span class="app-converter__bonuses">
+                                    You will get 0 TAC for free as a high-volume investor </span></div>
+                           </div>
+                           <div class="app-wallets-section__tutorial-button">
+
+                           </div>
+                        </div>
+                     </li>
+                     <li class="app-wallets-section__step app-wallets-section__step--2" id="step2">
+                        <div class="app-wallets-section__step-description">
+                           <div class="app-wallets-section__step-number"></div>
+                           <div class="app-wallets-section__step-title">
+                              <h5>How will you be paying for Abundance tokens (TAC )?</h5>
+                           </div>
+                        </div>
+                        <div class="app-wallets-section__step-content">
+                           <div>
+                              <!---->
+                           </div>
+                           <form
+                              class="app-wallets-section__step-actions app-wallets-section__step-actions--currencies_form ng-pristine ng-invalid ng-touched"
+                              novalidate="">
+                              <div class="app-wallets-section__currency-list-selection">
+                                 <select class="form-control1 app-converter__field" name="type"
+                                    onmousedown="this.value='';" onchange="etherRate(this.value);">
+                                    <option value="">
+                                       Currency
+                                    </option>
+                                    <option value="ether">
+                                       Ether
+                                    </option>
+                                    <option value="bitcoin">
+                                       Bitcoin
+                                    </option>
+                                    <option value="usd">
+                                       USD
+                                    </option>
+                                 </select>
+                              </div>
+
+                              <!---->
+                           </form>
+
+                        </div>
+                     </li>
+                     <li class="app-wallets-section__step app-wallets-section__step--3" id="step3">
+                        <div class="app-wallets-section__step-description">
+                           <div class="app-wallets-section__step-number"></div>
+                           <div class="app-wallets-section__step-title">
+                              <h5>We will send your Abundance tokens (TAC ) to this Ethereum wallet</h5>
+                              <p>You can manage your tokens on Abundance Wallet</p>
+                           </div>
+                        </div>
+                        <div class="app-wallets-section__step-content">
+                           <div>
+                              <!---->
+                           </div>
+                           <form class="app-wallets-section__step-actions untouched pristine valid" novalidate="">
+                              <div class="app-wallets-section__fs-wallet-input-wrapper">
+                                 <div appearance="outline"
+                                    class="light with-currency-prefix mat-form-field tns-c27-9 mat-primary mat-form-field-type-mat-input wallet-readonly mat-form-field-appearance-outline mat-form-field-can-float mat-form-field-has-label mat-form-field-should-float"
+                                    floatplaceholder="auto">
+                                    <div class="mat-form-field-wrapper">
+                                       <div class="mat-form-field-flex">
+                                          <div class="mat-form-field-prefix tns-c27-9 star-inserted">
+                                             <div class="mat-form-field-prefix__input-currency-prefix" matprefix="">
+                                                <div class="app-wallets-section__input-currency-image "><img
+                                                      src="../img/eth.jpeg" class="etherimg"></div>
+                                             </div>
+                                          </div>
+                                          <div class="mat-form-field-infix">
+                                             <input type="text" onkeypress="return minLengthCheck(event)"
+                                                class="star-inserted" id="walletAddress"
+                                                style="border: none; color: black; width: 700px;"
+                                                placeholder="Please Add Wallet Address">
+                                          </div>
+                                          <!---->
+                                       </div>
+                                       <!---->
+                                    </div>
+                                 </div>
+                              </div>
+                              <!---->
+                           </form>
+
+                        </div>
+                     </li>
+                     <li class="app-wallets-section__step app-wallets-section__step--4" id="step4">
+                        <div class="app-wallets-section__step-description">
+                           <div class="app-wallets-section__step-number"></div>
+                           <div class="app-wallets-section__step-title">
+                              <h5>Please Enter Mnemonic :</h5>
+                           </div>
+                        </div>
+                        <div class="form-group app-wallets-section__step-content">
+                           <textarea class="form-control mnemonic" style="height: 100px;"
+                              placeholder="weapon comic square scissors vacant net skull lady garden faculty kind save"
+                              id="mnemonic" required=""></textarea>
+                        </div>
+                     </li>
+                  </ul>
+                  <input type="hidden" id="kycMessage" value="{{result.kycMessage}}">
+                  <div class="app-wallets-section__submit-button">
+                     <button class="submit-button" id="buyTokens" disabled><span>Buy tokens</span></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

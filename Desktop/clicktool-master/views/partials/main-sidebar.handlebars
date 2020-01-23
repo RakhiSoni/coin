@@ -1,0 +1,73 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <div class="logo2">
+                        <a href="{{constants.ACCESSURL}}users/dashboard"><img src="{{constants.ACCESSURL}}img/logo.png"
+                                alt=""></a>
+                        <h2>The Abundance Coin</h2>
+                    </div>
+                </div>
+                <div class="logo-element">
+                    <img src="{{constants.ACCESSURL}}img/logo.png" alt="">
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="sidebar-collapse" id="slimscroll">
+        <ul class="nav metismenu" id="side-menu">
+
+            <li class="{{#ifCond title '==' 'Dashboard' }} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}users/dashboard"><i class="menu-icon menu-icon1"><img
+                            src="{{constants.ACCESSURL}}img/menu-icon1.png" alt=""></i> <span
+                        class="nav-label">Dashboard</span> </a>
+            </li>
+            <li class="{{#ifCond title '==' 'kyc request'}} active {{/ifCond}} kycPage">
+                <a href=""><i class="menu-icon menu-icon1"><img src="{{constants.ACCESSURL}}img/menu-icon10.png"
+                            alt=""></i>
+                    <span class="nav-label">
+                        KYC Verification</span></a>
+            </li>
+            <li
+                class="{{#ifCond title '==' 'My Wallets'}} active {{/ifCond}}{{#ifCond title '==' 'Add Wallet'}} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}users/wallets"><i class="menu-icon menu-icon1"><img
+                            src="{{constants.ACCESSURL}}img/menu-icon11.png" alt=""></i> <span class="nav-label">My
+                        Wallet</span></a>
+            </li>
+            <li class="{{#ifCond title '==' 'My Addresss'}} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}users/myadddress"><i class="menu-icon menu-icon1"><img
+                            src="{{constants.ACCESSURL}}img/menu-icon3.png" alt=""></i> <span class="nav-label">My
+                        Address</span></a>
+            </li>
+            <li class="{{#ifCond title '==' 'Statements'}} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}users/statements"><i class="menu-icon menu-icon1"><img
+                            src="{{constants.ACCESSURL}}img/menu-icon4.png" alt=""></i> <span
+                        class="nav-label">Statement</span></a>
+            </li>
+            <li class="{{#ifCond title '==' 'Referrals'}} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}users/referrals"><i class="menu-icon menu-icon1"><img
+                            src="{{constants.ACCESSURL}}img/menu-icon5.png" alt=""></i> <span class="nav-label">Referral
+                        Rewards</span></a>
+            </li>
+            <li class="{{#ifCond title '==' 'Help And Support'}} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}users/help-and-support"><i class="menu-icon menu-icon1"><img
+                            src="{{constants.ACCESSURL}}img/menu-icon6.png" alt=""></i> <span class="nav-label">Help &
+                        Support</span></a>
+            </li>
+            <li class="{{#ifCond title '==' 'About Us'}} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}users/about-us"><i class="menu-icon menu-icon1"><img
+                            src="{{constants.ACCESSURL}}img/menu-icon7.png" alt=""></i> <span class="nav-label">About
+                        Us</span></a>
+            </li>
+            <li>
+                <a href="{{constants.ACCESSURL}}logout"><i class="menu-icon menu-icon1"><img
+                            src="{{constants.ACCESSURL}}img/menu-icon9.png" alt=""></i> <span class="nav-label">Log
+                        Out</span></a>
+            </li>
+
+        </ul>
+    </div>
+</nav>

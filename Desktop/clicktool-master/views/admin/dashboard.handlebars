@@ -1,0 +1,429 @@
+<div class="wrapper wrapper-content" id="tac-rates">
+    <div>
+        <h3 class="rate">Today's TAC Rates :</h3>
+        <div class="row ">
+            <div class="col-lg-8">
+                <div class="rate-style">
+                    <div class="app-ico-rounds__title">
+                        <div class="col-md-3 dashboard-box-css" style="" data-toggle="tooltip" data-placement="right"
+                            title="" data-original-title="US Dollar">
+                            <p class="mb-0" style="font-size: 20px;"><i class="fa fa-usd" aria-hidden="true"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="input-type" placeholder="1 TAC" value="1 TAC">1 TAC</label>
+                    </div>
+                    <div class="input-type"> = </div>
+                    <div>
+                        <label class="input-type rate-space" placeholder="1 TAC"
+                            value="1 TAC">{{result.todayRate.dollarRate}}
+                            USD</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="rate-style">
+                    <div class="app-ico-rounds__title">
+                        <div class="col-md-3 dashboard-box-css" data-toggle="tooltip" data-placement="right" title=""
+                            data-original-title="US Dollar">
+                            <p class="mb-0" style="font-size: 20px;"><i class="fa fa-btc" aria-hidden="true"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="input-type" placeholder="1 TAC" value="1 TAC">1 TAC</label>
+                    </div>
+                    <div class="input-type"> = </div>
+                    <div>
+                        <label class="input-type rate-space" placeholder="1 TAC"
+                            value="1 TAC">{{result.todayRate.bitcoinRate}}
+                            BTC</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="rate-style" style="margin-bottom: 10px;">
+                    <div class="app-ico-rounds__title">
+                        <div class="col-md-3 dashboard-box-css" data-toggle="tooltip" data-placement="right" title=""
+                            data-original-title="US Dollar">
+                            <p style="font-size: 20px;  display: block;"><img src="../img/ethereum.png"
+                                    style="width: 23px;">
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="input-type" placeholder="1 TAC" value="1 TAC">1 TAC</label>
+                    </div>
+                    <div class="input-type"> = </div>
+                    <div>
+                        <label class="input-type rate-space" placeholder="1 TAC"
+                            value="1 TAC">{{result.todayRate.etherRate}}
+                            ETH</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div id="history">
+                    <div class="app-bonuses-section">
+                        <div class="app-bonuses-section__table">
+                            <div class="app-bonuses-section__rounds">
+                                <app-ico-rounds>
+                                    <div class="app-ico-rounds dashboard">
+                                        <!---->
+                                        <div
+                                            class="app-ico-rounds__row-wrapper star-inserted {{#ifCond result.activeRound '==' '1' }} active {{else}} upcoming {{/ifCond}}">
+                                            {{#ifCond result.activeRound '==' '1'}}
+                                            <img class=" app-ico-rounds__ribbon star-inserted" src="img/active.svg">
+                                            {{/ifCond}}
+                                            <div class="app-ico-rounds__row">
+                                                <div class="app-ico-rounds__title">
+                                                    <div class="app-ico-rounds__name">{{result.round1}} :</div>
+                                                    <div class="app-ico-rounds__date"> {{result.dateRange1}}
+                                                    </div>
+                                                </div>
+                                                <div class="app-ico-rounds__bonus"><b
+                                                        class="app-ico-rounds__bonus-value"><span
+                                                            class="app-ico-rounds__dollar-sign">$</span>
+                                                        {{result.rate1}} </b><span
+                                                        class="app-ico-rounds__bonus-title">Per
+                                                        token</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="app-ico-rounds__row-wrapper star-inserted {{#ifCond result.activeRound '==' '2' }} active {{else}} upcoming {{/ifCond}}">
+                                            {{#ifCond result.activeRound '==' '2'}}
+                                            <img class=" app-ico-rounds__ribbon star-inserted" src="img/active.svg">
+                                            {{/ifCond}}
+                                            <div class=" app-ico-rounds__row">
+                                                <div class="app-ico-rounds__title">
+                                                    <div class="app-ico-rounds__name">{{result.round2}} :</div>
+                                                    <div class="app-ico-rounds__date"> {{result.dateRange2}}
+                                                    </div>
+                                                </div>
+                                                <div class="app-ico-rounds__bonus"><b
+                                                        class="app-ico-rounds__bonus-value"><span
+                                                            class="app-ico-rounds__dollar-sign">$</span>
+                                                        {{result.rate2}} </b><span
+                                                        class="app-ico-rounds__bonus-title">Per
+                                                        token</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="app-ico-rounds__row-wrapper star-inserted {{#ifCond result.activeRound '==' '3' }} active {{else}} upcoming {{/ifCond}}">
+                                            {{#ifCond result.activeRound '==' '3'}}
+                                            <img class=" app-ico-rounds__ribbon star-inserted" src="img/active.svg">
+                                            {{/ifCond}}
+                                            <div class="app-ico-rounds__row">
+                                                <div class="app-ico-rounds__title">
+                                                    <div class="app-ico-rounds__name">{{result.round3}} :</div>
+                                                    <div class="app-ico-rounds__date"> {{result.dateRange3}}
+                                                    </div>
+                                                </div>
+                                                <div class="app-ico-rounds__bonus"><b
+                                                        class="app-ico-rounds__bonus-value"><span
+                                                            class="app-ico-rounds__dollar-sign">$</span>
+                                                        {{result.rate3}} </b><span
+                                                        class="app-ico-rounds__bonus-title">Per
+                                                        token</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </app-ico-rounds>
+                            </div>
+                        </div>
+                        <div class="app-bonuses-section__timer-section">
+                            <!---->
+                            <div class="app-bonuses-section__table--row highlighted star-inserted">
+                                <div class="app-bonuses-section__table--title">
+                                    <div class="app-bonuses-section__table--name"> {{result.activeRoundName}}
+                                    </div>
+                                    <div class="app-bonuses-section__table--date"> {{result.activeRoundDate}}
+                                    </div>
+                                </div>
+                                <div class="app-bonuses-section__table--bonus"><b
+                                        class="app-bonuses-section__table--dollar-sign">$</b><span
+                                        class="app-bonuses-section__table--bonus-value"><b>
+                                            {{result.activeRoundRate}}
+                                        </b><b class="app-bonuses-section__table--bonus-title">Per
+                                            token</b></span>
+                                </div>
+                            </div>
+                            <div class="app-bonuses-section__timer">
+                                <div class="app-timer gradient-line inner-page">
+                                    <div class="app-timer__clock">
+                                        <!---->
+                                        <h2 class="app-timer__title star-inserted"> {{result.headline}} : </h2>
+                                        <div class="app-timer__time star-inserted" id="timend">
+                                            <figure class="app-timer__digits">
+                                                <div class="app-timer__time-value"><span
+                                                        class="app-timer__animation-target">
+                                                    </span><span class="app-timer__animation-target runAnimation"
+                                                        id="days"></span>
+                                                </div>
+                                                <figcaption class="app-timer__time-label"> Days </figcaption>
+                                            </figure>
+                                            <span class="app-timer__separator">:</span>
+                                            <figure class="app-timer__digits">
+                                                <div class="app-timer__time-value"><span
+                                                        class="app-timer__animation-target">
+                                                    </span><span class="app-timer__animation-target runAnimation"
+                                                        id="hours"></span>
+                                                </div>
+                                                <figcaption class="app-timer__time-label"> Hours </figcaption>
+                                            </figure>
+                                            <span class="app-timer__separator">:</span>
+                                            <figure class="app-timer__digits">
+                                                <div class="app-timer__time-value"><span
+                                                        class="app-timer__animation-target runAnimation">
+                                                    </span><span class="app-timer__animation-target"
+                                                        id="minutes"></span>
+                                                </div>
+                                                <figcaption class="app-timer__time-label"> Minute </figcaption>
+                                            </figure>
+                                            <span class="app-timer__separator">:</span>
+                                            <figure class="app-timer__digits">
+                                                <div class="app-timer__time-value"><span
+                                                        class="app-timer__animation-target">
+                                                    </span><span class="app-timer__animation-target runAnimation"
+                                                        id="secounds"></span>
+                                                </div>
+                                                <figcaption class="app-timer__time-label"> Seconds </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <div class="app-timer__progress-bar-wrapper">
+                                        <div class="app-timer__progress-bar" style="width: 42.5514%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center" id="dash">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <h3>Soft Cap</h3>
+                    <p>{{result.softCap}}</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <h3>Hard Cap</h3>
+                    <p>{{result.hardCap}}</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <h3>Users</h3>
+                    <p>{{result.totalUsers}}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row text-center" id="dash">
+        <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <h3>Total Tokens Sold</h3>
+                    <p>{{result.totalTokensSold}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <h3>KYC Pending Request</h3>
+                    <p>{{result.totalKYCPendingRequest}}</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <h3>Private Sale Tokens</h3>
+                    <p>{{result.privateSaleCount}}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="ibox">
+        <div class="ibox-content">
+            <h2 class="rate" style="font-weight:bold">Total collections</h2>
+            <div class="row text-center" id="dash">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <h3>BTC</h3>
+                    <p>{{result.totalCollection.bitcoin}}</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <h3>ETH</h3>
+                    <p>{{result.totalCollection.ether}}</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <h3>USD</h3>
+                    <p>{{result.totalCollection.usd}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="ibox" id="dash">
+        <div class="ibox-content">
+            <h2 class="rate" style="font-weight:bold">Round statistics </h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Pre-Sale 1</th>
+                        <th>Pre-Sale 2</th>
+                        <th>Crowdsale</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Start Date</td>
+                        <td>{{formatDate result.round1Details.startDate}}</td>
+                        <td>{{formatDate result.round2Details.startDate}}</td>
+                        <td>{{formatDate result.round3Details.startDate}}</td>
+
+                    </tr>
+                    <tr>
+                        <td>End Date</td>
+                        <td>{{formatDate result.round1Details.endDate}}</td>
+                        <td>{{formatDate result.round2Details.endDate}}</td>
+                        <td>{{formatDate result.round3Details.endDate}}</td>
+
+                    </tr>
+                    <tr>
+                        <td>Total Token Sold</td>
+                        <td>{{result.round1Details.tokenSold}}</td>
+                        <td>{{result.round2Details.tokenSold}}</td>
+                        <td>{{result.round3Details.tokenSold}}</td>
+
+                    </tr>
+                    <tr>
+                        <td>Soft Cap</td>
+                        <td>{{result.round1Details.softCap}}</td>
+                        <td>{{result.round2Details.softCap}}</td>
+                        <td>{{result.round3Details.softCap}}</td>
+                    </tr>
+                    <tr>
+                        <td>Token Supply</td>
+                        <td>{{result.round1Details.tokenSupply}}</td>
+                        <td>{{result.round2Details.tokenSupply}}</td>
+                        <td>{{result.round3Details.tokenSupply}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="ibox text-center">
+        <button class=" btn btn-primary btn-small m-t-sm" style='margin-right:20px' data-toggle="modal"
+            data-target="#next-round">Start Next Round</button>
+        <button class="btn btn-primary btn-small m-t-sm" data-toggle="modal" data-target="#softcape-update">Update
+            Softcap</button>
+    </div>
+</div>
+
+
+<div class="modal fade" id="next-round" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    style="padding-top: 120px;">
+    <div class="modal-dialog  modal-a" role="document">
+        <div class="modal-content text-center" style="padding-top: 45px;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h2>Are You Sure You Want To Start Next Round ?</h2>
+            <div class="text-center" style="padding-bottom: 5%;">
+                <button class=" btn  btn-primary btn-small m-t-sm" style="margin-right: 10px;"
+                    id="ajax-next-round">Yes</button>
+                <button class="btn  btn-primary btn-small m-t-sm" data-dismiss="modal" aria-label="Close">No</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="softcape-update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    style="padding-top: 120px;">
+    <div class="modal-dialog  modal-a" role="document">
+        <div class="modal-content text-center" style="padding-top: 45px;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <form action="{{constants.ACCESSURL}}admin/createUser" class="createUser" method="POST">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group text-left"
+                            style="margin-bottom: 20px; margin-left: 29%; margin-right: 29%;">
+                            <label>Enter Value of softCap :</label>
+                            <input type="number" class="form-control" onkeypress="return minLengthCheck(event)"
+                                placeholder="Soft Cap" id="softCapeValue" required>
+                        </div>
+                        <div class="text-center" style="padding-bottom: 5%;">
+                            <button class=" btn  btn-primary btn-small m-t-sm" style="margin-right: 10px;"
+                                id="ajax-softcape-update">update</button>
+                            <button class="btn  btn-primary btn-small m-t-sm" data-dismiss="modal"
+                                aria-label="Close">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="cong-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    style="padding-top: 110px;">
+    <div class="modal-dialog  modal-a" role="document">
+        <div class="modal-content text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h1>Successful</h1>
+            <div class="success-msg-icon">
+                <i class="fa fa-check-circle m-b-0" aria-hidden="true"></i>
+            </div>
+            <h2 id="successMsg" style="padding-bottom: 5%;"></h2>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    style="padding-top: 110px;">
+    <div class="modal-dialog  modal-a" role="document">
+        <div class="modal-content text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h1>Unsuccessful</h1>
+            <div class="success-msg-icon">
+                <i class="fa fa-times-circle"></i>
+            </div>
+            <h2 id="errorMsg" style="padding-bottom: 5%;"></h2>
+        </div>
+    </div>
+</div>

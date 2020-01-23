@@ -1,0 +1,69 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="buy-1-section">
+                        <div class="buy-it-top">
+                            <ul>
+                                <li>
+                                    <div class="box">
+                                        <div class="icon">
+                                            <img src="{{constants.ACCESSURL}}/img/buy-1-icon1.png" alt="">
+                                        </div>
+                                        <h3>ETH</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="icon">
+                                            <img src="{{constants.ACCESSURL}}/img/buy-1-icon2.png" alt="">
+                                        </div>
+                                        <h3>CLC</h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buy-it-form">
+                            <div class="buy-it-one">
+                                <h4 class="text-center">{{etherValue.amount_of_tokens}} CLC = {{etherValue.totalEther}}
+                                    ETH</h4>
+                            </div>
+                            <div class="buy-it-one">
+                                <h4 class="text-center">Please transfer this amount of ether to your The Abundance Coin
+                                    address.</h4>
+                            </div>
+                            <div class="buy-it-one">
+                                <label>From</label>
+                                <h4>{{user.user.publicWalletAddress}}</h4>
+                            </div>
+                            <div class="buy-it-one">
+                                <label>TO</label>
+                                <h4>{{etherValue.wallet_address}}</h4>
+                            </div>
+                            <div class="buy-it-one">
+                                <label>Network Fee <strong>{{etherValue.gasUsedInEther}}</strong></label>
+                            </div>
+                            <div class="buy-it-one">
+                                <label>Max Total <strong>{{etherValue.totalEther}}</strong></label>
+                            </div>
+                            <form action="{{constants.ACCESSURL}}api/wallets/buy-token?access_token={{user._id}}"
+                                method="post" class="buyTokens">
+                                <input type="hidden" name="tokens" value="{{etherValue.amount_of_tokens}}" />
+                                <input type="hidden" name="ckc_per_ether" value="{{etherValue.ckc_per_ether}}" />
+                                <input type="hidden" name="mnemonic" value="{{etherValue.mnemonic}}" />
+                                <input type="hidden" name="wallet_address" value="{{etherValue.wallet_address}}" />
+                                <input type="hidden" name="wallet_index" value="{{etherValue.wallet_index}}" />
+                                <div class="phrase-btn phrase-btn2">
+                                    <button class="btn btn-primary" type="submit">Buy</button>
+                                </div>
+                            </form>
+                            <div class="buyError"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

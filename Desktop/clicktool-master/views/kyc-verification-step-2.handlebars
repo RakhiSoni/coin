@@ -1,0 +1,142 @@
+<div class="wrapper wrapper-content">
+    <div class="row" id="kyc-details">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="title-table">
+                        <h2>Submit KYC Documents</h2>
+                    </div>
+
+                    <div class="kyc-top-bar clearfix">
+                        <ul>
+                            <li class="current">
+                                <div class="box">
+                                    <div class="icon ic-1"></div>
+                                </div>
+                            </li>
+                            <li class="current">
+                                <div class="box">
+                                    <div class="icon ic-2"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box">
+                                    <div class="icon ic-3"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form action="{{constants.ASSESSURL}}/api/users/kycDocumentsUpload2" class="kyc-step-2"
+                        method="post" enctype="multipart/form-data">
+                        <div class="kyc-section">
+                            <h2>Upload Documents:</h2>
+                            <h4>Please upload a photo of your Passport or Government-Issued Photo ID.</h4>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="kyc-color">Choose ID Type :</div>
+                                    <div class="kyc-space">
+                                        <select class="form-control" id="docID" required>
+                                            <option>Choose ID Type</option>
+                                            <option {{#ifCond  result.docID '==' 'Licence'}} selected {{/ifCond}}>
+                                                Licence</option>
+                                            <option {{#ifCond  result.docID '==' 'Passport'}} selected {{/ifCond}}>
+                                                Passport</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="kyc-color">Choose Address Proof Type :</div>
+                                    <div class="kyc-space">
+                                        <select class="form-control" id="docIdBill">
+                                            <option>Address Proof</option>
+                                            <option {{#ifCond  result.utilityBill '!==' ''}} selected {{/ifCond}}>
+                                                Utility Bill</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="kyc-color">Document ID :</div>
+                                    <div class="kyc-space">
+                                        <input type="hidden" value="" id="hiddenImg1">
+                                        <input class="form-control KycImg1" type="file" placeholder="Document ID"
+                                            id="docImage" accept="image/*" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="kyc-color">Photo of Address Proof :</div>
+                                    <div class="kyc-space">
+                                        <input type="hidden" value="" id="hiddenImg3">
+                                        <input class="form-control KycImg3" type="file" accept="image/*"
+                                            placeholder="Utility Bill" id="utilityBill">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="kyc-color"> Photo of You Holding Document :</div>
+                                    <div class="kyc-space">
+                                        <input type="hidden" value="" id="hiddenImg2">
+                                        <input class="form-control KycImg2" type="file" accept="image/*"
+                                            placeholder="Photo of You Holding Document" id="docHoldingImage" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="guide-box">
+                                        <h3>Guide:</h3>
+                                        <p>Please Hide your unique identification number using "Post-it" notes or using
+                                            your fingers</p>
+                                        <p>The unique identification numbers are the areas highlighted in red in the
+                                            below example image.</p>
+                                        <p>File Type: JPG, JPEG & PNG</p>
+                                        <p>Image size: 2MB or less</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="guide-box">
+                                        <h3>Examples:</h3>
+                                        <ul>
+                                            <li>
+                                                <div class="box">
+                                                    <img src="/img/doc1.png" alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="box">
+                                                    <img src="/img/doc2.png" alt="">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row m-t-md">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <button class="btn btn-primary btn-block btn-dark" type="submit"
+                                            onclick="location.href = 'kyc-verification-1';">Previous</button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <button class="btn btn-primary btn-block kyc-step-2" type="submit">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

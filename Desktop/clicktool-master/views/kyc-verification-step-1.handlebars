@@ -1,0 +1,143 @@
+<div id="wrapper">
+    <div class="wrapper wrapper-content">
+        <div class="row" id="kyc-details">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="box-heading title-table">
+                            <h2>Submit KYC Documents</h2>
+                        </div>
+                        <div class="kyc-top-bar clearfix">
+                            <ul>
+                                <li class="current">
+                                    <div class="box">
+                                        <div class="icon ic-1"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="icon ic-2"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="icon ic-3"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <form action="{{constants.ASSESSURL}}/api/users/kycDocumentsUpload1" class="kyc-step-1"
+                            method="post">
+
+                            <div class="kyc-section">
+                                <h2>Personal Information:</h2>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="kyc-color">Country :</div>
+                                        <div class="kyc-space">
+                                            <select class="form-control" name="country" id="country"
+                                                onchange="setStates()" required>
+                                                {{#ifCond result.country '!=' ''}}
+                                                <option value="{{result.countryCode}}" selected="">
+                                                    {{result.country}}</option>
+                                                {{/ifCond}}
+                                                {{#each country}}
+                                                <option value="{{this.code}}">{{this.name}}</option>
+                                                {{/each}}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="kyc-color">State :</div>
+                                        <div class="kyc-space">
+                                            <select class="form-control" name="country" id="state"
+                                                onchange="setCities()" required>
+                                                {{#ifCond result.state '!=' ''}}
+                                                <option value="{{result.state}}" selected="">
+                                                    {{result.state}}</option>
+                                                {{/ifCond}}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="kyc-color">City :</div>
+                                        <div class="kyc-space">
+                                            {{!-- <input class="form-control" type="text"
+                                                onkeypress="return minLengthCheck(event)" placeholder="City" id="city"
+                                                value="{{result.city}}" required> --}}
+                                            <select class="form-control" name="country" id="city" required>
+                                                {{#ifCond result.city '!=' ''}}
+                                                <option value="{{result.city}}" selected="">
+                                                    {{result.city}}</option>
+                                                {{/ifCond}}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="kyc-color">First Name :</div>
+                                        <div class="kyc-space">
+                                            <input class="form-control" type="text"
+                                                onkeypress="return minLengthCheck(event)" placeholder="First Name"
+                                                id="firstname" value="{{result.firstname}}" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="kyc-color">Last Name :</div>
+                                        <div class="kyc-space">
+                                            <input class="form-control" type="text"
+                                                onkeypress="return minLengthCheck(event)" placeholder="Last Name"
+                                                id="lastname" value="{{result.lastname}}" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="kyc-color">Email :</div>
+                                        <div class="kyc-space">
+                                            <input class="form-control" type="email"
+                                                onkeypress="return minLengthCheck(event)" placeholder="Email Address"
+                                                id="email" value="{{result.email}}" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="kyc-color">DOB :</div>
+                                        <div class="kyc-space" id="data_1">
+                                            <div class="input-group date">
+                                                <input type="text" class="form-control" placeholder="DD/MM/YYYY"
+                                                    name="dob" value="{{result.dateOfBirth}}" id="dateOfBirth"
+                                                    oninput="return maxLengthCheck(this)" onchange="kycDateValidation()"
+                                                    required><span class="input-group-addon">
+                                                    <img src="{{constants.ASSESSURL}}/img/calendaricon.png"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="kyc-color">Phone :</div>
+                                        <div class="kyc-space">
+                                            <input class="form-control" type="number"
+                                                onkeypress="return minLengthCheck(event)"
+                                                oninput="return maxLengthCheck(this)" maxlength="13" minlength="7"
+                                                placeholder="Phone No." id="phone" value="{{result.phone}}" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-6">
+                                        <div class="kyc-space">
+                                            <button class="btn btn-primary btn-block " type="submit">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

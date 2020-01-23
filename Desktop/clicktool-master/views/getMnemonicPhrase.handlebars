@@ -1,0 +1,29 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="title-table title-lft clearfix">
+                        <h2>Enter Your Recovery Phrase</h2>
+                    </div>
+                    <div class="phrase-part">
+                        <form action="{{constants.ACCESSURL}}users/verify-mnemonic-phrase" method="post" class="verifyMnemonic">
+                            <div class="phrase-icon">
+                                <img src="{{constants.ACCESSURL}}img/phrase-icon.png" alt="">
+                            </div>
+                            <div class="success"></div>
+                            <div class="form-group">
+                                <textarea class="form-control mnemonic" placeholder="weapon comic square scissors vacant net skull lady garden faculty kind save" name="mnemonic" required=""></textarea>
+                                <div class="error"></div>
+                            </div>
+                            <div class="phrase-btn">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </form>
+                        <h6 class="warning_msg">* Please enter your recovery phrase to proceed further. </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

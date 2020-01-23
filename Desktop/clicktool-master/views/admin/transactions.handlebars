@@ -1,0 +1,52 @@
+<div class="wrapper wrapper-content">
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content" id="history">
+                    <div class="box-heading">
+
+                        <h2>Transactions
+                        </h2>
+                    </div>
+                    <div class="table-responsive coman-table" id="owner-detail-btn">
+                        <table class="table dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>To</th>
+                                    <th>From</th>
+                                    <th>Wallet Address</th>
+                                    <th>Date - Time</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each result}}
+                                <tr>
+                                    <td>
+                                        <p>{{this.toUser}}
+                                        </p>
+                                        <p class="transaction-table-css">{{this.to}}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>{{this.fromUser}}
+                                        </p>
+                                        <p class="transaction-table-css">{{this.from}}
+                                        </p>
+                                    </td>
+                                    <td style="padding-right: 80px;">{{this.contractAddress}}</td>
+                                    <td>{{this.timeStamp}}</td>
+                                    <td>{{this.currency}}</td>
+                                    <td>{{this.value}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

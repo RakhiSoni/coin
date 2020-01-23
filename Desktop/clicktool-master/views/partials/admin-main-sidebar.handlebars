@@ -1,0 +1,45 @@
+<nav class="navbar-default navbar-expand-lg  navbar-static-side left-main-menu" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <div class="logo-panel text-center float-n">
+                        <a href="{{constants.ACCESSURL}}admin/dashboard"> <img
+                                src="{{constants.ACCESSURL}}admin/img/logo-modal.png" alt=""></a>
+                        <h2>The Abundance Coin</h2>
+                    </div>
+
+                </div>
+                <div class="logo-element">
+                    <a href="{{constants.ACCESSURL}}admin/dashboard"> <img
+                            src="{{constants.ACCESSURL}}admin/img/logo-modal.png" alt=""></a>
+                </div>
+            </li>
+            <li class="{{#ifCond title '==' 'admin-dashboard' }} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}admin/dashboard" title="dashboard"><i class="fa fa-tachometer"
+                        aria-hidden="true"></i> <span class="nav-label">Dashboard</span></a>
+            </li>
+            <li class="{{#ifCond title '==' 'admin-users' }} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}admin/users"><i class="fa fa-user" aria-hidden="true"></i> <span
+                        class="nav-label">Users</span></a>
+            </li>
+            <li class="{{#ifCond title '==' 'admin-wallets' }} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}admin/wallets"><i class="icon icon-5"></i> <span
+                        class="nav-label">Wallet</span></a>
+            </li>
+            <li class="{{#ifCond title '==' 'admin-kyc-request' }} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}admin/kyc-request"><i class="icon icon-2"></i> <span
+                        class="nav-label">KYC
+                        Request</span></a>
+            </li>
+            <li class="{{#ifCond title '==' 'admin-transactions' }} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}admin/transactions"><i class="icon icon-4"></i> <span
+                        class="nav-label">Transactions </span></a>
+            </li>
+            <li class="{{#ifCond title '==' 'admin-token-transfer' }} active {{/ifCond}}">
+                <a href="{{constants.ACCESSURL}}admin/token-transfer"><i class="fa fa-btc " aria-hidden="true"></i>
+                    <span class="nav-label margin-top">Token Transfer </span></a>
+            </li>
+        </ul>
+    </div>
+</nav>

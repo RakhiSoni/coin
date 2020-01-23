@@ -1,0 +1,130 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ibox">
+                <div class="ibox-content" id="history">
+                    <div class="box-heading">
+                        <h2>Users</h2>
+                    </div>
+                    <div class="text-right">
+                        <a href="#create-user" class="btn btn-primary btn-small m-t-sm m-b-sm" data-dismiss="modal"
+                            data-toggle="modal">Create User</a>
+                    </div>
+                    <div class="table-responsive coman-table" id="owner-detail-btn">
+                        <table class="table dataTables-example-0">
+                            <thead>
+                                <tr>
+                                    <th>Profile Pic</th>
+                                    <th>Name</th>
+                                    <th> Registered Date</th>
+                                    <th>KYC Status</th>
+                                    <th data-orderable="false">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each result}}
+                                <tr>
+                                    <td><a href="{{../constants.ACCESSURL}}admin/user-details?userId={{this._id}}">
+                                            <div class="image img-rounded profile-image-table">
+                                                {{#ifCond this.profilePic '==' ''}}
+                                                <img src="{{constants.ACCESSURL}}/img/my-ac-img.png" alt=""
+                                                    class="profile-pic">
+                                                {{else}}
+                                                <img src="{{../constants.ACCESSURL}}uploads/profile_picture/{{this.profilePic}}"
+                                                    alt="">
+                                                {{/ifCond}}
+                                            </div>
+                                        </a></td>
+                                    <td>{{this.name}}</td>
+                                    <td> {{this.registeredDate}}</td>
+                                    <td>{{#ifCond this.kycStatus '==' '0'}} Not Submitted {{/ifCond}}
+                                        {{#ifCond this.kycStatus '==' '1'}} Under Review {{/ifCond}}
+                                        {{#ifCond this.kycStatus '==' '2'}} Verified {{/ifCond}}
+                                        {{#ifCond this.kycStatus '==' '3'}} Failed {{/ifCond}}
+                                    </td>
+                                    <td><a href="{{../constants.ACCESSURL}}admin/user-details?userId={{this._id}}"><i
+                                                class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal coman-modal  fade" id="create-user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog  modal-a" role="document">
+            <div class="modal-content text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h2>Create User</h2>
+                <form action="{{constants.ACCESSURL}}admin/createUser" class="createUser" method="POST">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group text-left">
+                                <label>First Name :</label>
+                                <input type="text" class="form-control" onkeypress="return minLengthCheck(event)"
+                                    placeholder="First Name" id="fname" required>
+                            </div>
+                            <div class="form-group text-left">
+                                <label>Last Name:</label>
+                                <input type="text" class="form-control" onkeypress="return minLengthCheck(event)"
+                                    placeholder="Last Name" id="lname" required>
+                            </div>
+                            <div class="form-group text-left">
+                                <label>Email Id:</label>
+                                <input type="email" class="form-control" onkeypress="return minLengthCheck(event)"
+                                    placeholder="Email Id" id="email" required>
+                            </div>
+                            <div class="form-group  text-left">
+                                <label>Telephone Number:</label>
+                                <div class="d-flex">
+                                    <select class="form-control max-90 m-r-sm" id="code">
+                                        {{#each country}}
+                                        <option value="{{this.code}}">{{this.code}}</option>
+                                        {{/each}}
+                                    </select>
+                                    <input type="number" class="form-control" onkeypress="return minLengthCheck(event)"
+                                        oninput="return maxLengthCheck(this)" maxlength="13" minlength="7"
+                                        placeholder="1234567890" id="phone" required>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-small m-t-sm" id="userCreate">Create User</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal coman-modal  fade" id="cong-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog  modal-a" role="document">
+            <div class="modal-content text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="success-msg-icon">
+                    <i class="fa fa-check-circle m-b-0" aria-hidden="true"></i>
+                </div>
+                <h2 id="successMsg"></h2>
+            </div>
+        </div>
+    </div>
+    <div class="modal coman-modal  fade" id="failed-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog  modal-a" role="document">
+            <div class="modal-content text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="success-msg-icon">
+                    <i class="fa fa-times-circle"></i>
+                </div>
+                <h2 id="failedMsg"></h2>
+            </div>
+        </div>
+    </div>

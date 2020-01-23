@@ -1,0 +1,479 @@
+</div>
+</div>
+<div class="modal forgot-pws-modal fade" id="Modal-set-default" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Alert</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you Sure To Set as Default Wallet?</p>
+                <div class="btn-sure">
+                    <button type="button" class="btn btn-default close_model close_wallet_confirm"
+                        data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary default_wallet_confirm">Yes</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal forgot-pws-modal fade" id="Modal-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Alert</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are u sure want to delete this wallet?</p>
+                <div class="btn-sure">
+                    <button type="button" class="btn btn-default close_model" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary delete_wallet_confirm">Yes</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="{{constants.ACCESSURL}}js/jquery-2.1.1.js"></script>
+<script src="{{constants.ACCESSURL}}js/bootstrap.min.js"></script>
+<script src="{{constants.ACCESSURL}}js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="{{constants.ACCESSURL}}js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="{{constants.ACCESSURL}}js/plugins/footable/footable.all.min.js"></script>
+<script src="{{constants.ACCESSURL}}js/plugins/footable/footable.paginate.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="{{constants.ACCESSURL}}js/inspinia.js"></script>
+<script src="{{constants.ACCESSURL}}js/plugins/pace/pace.min.js"></script>
+
+<script src="{{constants.ACCESSURL}}js/plugins/d3/d3.min.js"></script>
+<script src="{{constants.ACCESSURL}}js/plugins/c3/c3.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="{{constants.ACCESSURL}}js/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="{{constants.ACCESSURL}}js/app.js" type="text/javascript"></script>
+<script src="{{constants.ACCESSURL}}js/jquery.toast.js" type="text/javascript"></script>
+<script src="{{constants.ACCESSURL}}js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="{{constants.ACCESSURL}}js/polyfills.js"></script>
+<script src="{{constants.ACCESSURL}}js/jquery.slimscroll.min.js"></script>
+{{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> --}}
+<script>
+    if ('{{result.country}}' !== '') {
+        let countryName = document.getElementById('country').value;
+        $.ajax({
+            type: 'POST',
+            url: '/api/users/state-list',
+            data: {
+                countryName: countryName
+            },
+            dataType: 'json',
+            success: function (json) {
+                if (json.status == 200) {
+                    let opt;
+                    let select = document.getElementById('state');
+                    for (let i = 0; i <= json.data.length; i++) {
+                        opt = document.createElement('option');
+                        opt.value = json.data[i];
+                        opt.textContent = json.data[i];
+                        select.appendChild(opt);
+                    }
+                } else {
+                    $.toast({
+                        heading: 'Error',
+                        text: 'Please Select country again from the list.!!',
+                        showHideTransition: 'fade',
+                        icon: 'error'
+                    });
+                    $('.ajax-register .error').html();
+                    $('button[type=submit]')
+                        .html('Submit')
+                        .removeAttr('style');
+                }
+            },
+            error: function (message) {
+                if (message) {
+                    $('.ajax-register .error').html('Please Select country again from the list.!!');
+                } else if (message.error == 1 || message.status == 400) {
+                    $('.ajax-register .error').html('Please Select country again from the list.!!');
+                }
+            }
+        });
+    }
+
+    if ('{{result.city}}' !== '') {
+        let countryName = document.getElementById('country').value;
+        let stateName = document.getElementById('state').value;
+        $.ajax({
+            type: 'POST',
+            url: '/api/users/city-list',
+            data: {
+                countryName: countryName,
+                stateName: stateName
+            },
+            dataType: 'json',
+            success: function (json) {
+                if (json.status == 200) {
+                    let opt;
+                    let select = document.getElementById('city');
+                    for (let i = 0; i <= json.data.length; i++) {
+                        opt = document.createElement('option');
+                        opt.value = json.data[i];
+                        opt.textContent = json.data[i];
+                        select.appendChild(opt);
+                    }
+                } else {
+                    $.toast({
+                        heading: 'Error',
+                        text: 'Please Select country again from the list.!!',
+                        showHideTransition: 'fade',
+                        icon: 'error'
+                    });
+                    $('.ajax-register .error').html();
+                    $('button[type=submit]')
+                        .html('Submit')
+                        .removeAttr('style');
+                }
+            },
+            error: function (message) {
+                if (message) {
+                    $('.ajax-register .error').html('Please Select country again from the list.!!');
+                } else if (message.error == 1 || message.status == 400) {
+                    $('.ajax-register .error').html('Please Select country again from the list.!!');
+                }
+            }
+        });
+    }
+
+    if ('{{result.country}}' == '') {
+        setStates();
+    }
+</script>
+
+<script type="text/javascript">
+    $('#slimscroll').slimScroll({
+        position: 'right',
+        height: 'calc(100vh - 200px)',
+        railVisible: true,
+        alwaysVisible: false
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('.footable').footable();
+        $('.footable2').footable();
+        $('.statements').footable({
+            "columns": $.get('columns.json'),
+            "rows": $.get('rows.json')
+        });
+    });
+    $('#data_1 .input-group.date').datepicker({
+        todayBtn: "linked",
+        endDate: '+0d',
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true,
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        c3.generate({
+            bindto: '#lineChart',
+            data: {
+                columns: [
+                    ['data1', 30, 200, 100, 220, 150, 250, 30, 200, 100, 220, 150, 250],
+                    ['data2', 50, 20, 10, 40, 15, 25, 50, 20, 10, 40, 15, 25],
+                    ['data3', 20, 40, 20, 60, 30, 80, 20, 40, 20, 60, 30, 80]
+                ],
+                colors: {
+                    data1: '#5bccff',
+                    data2: '#ff877b',
+                    data3: '#a889e9'
+                }
+            }
+        });
+    });
+</script>
+<script>
+
+    let local = localStorage.getItem('buyToken');
+    if (local == 'running') {
+        document.getElementById("buyTokens").disabled = true;
+    } else {
+        localStorage.setItem('buyToken', '');
+        document.getElementById('buyTokens').disabled = false;
+        document.getElementById('myBtn').disabled = false;
+    }
+
+    if ("{{result.headline}}" === 'Sale Ended') {
+        document.getElementById("days").textContent = '00';
+        document.getElementById("hours").textContent = '00';
+        document.getElementById("minutes").textContent = '00';
+        document.getElementById("secounds").textContent = '00';
+        document.getElementById("myBtn").disabled = true;
+    }
+    else {
+        // Set the date we're counting down to
+        let countDownDate = new Date('{{result.futureDate}}').getTime();
+
+        // Update the count down every 1 second
+        setInterval(function () {
+
+            // Get today's date and time
+            let now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            let distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("days").textContent = days.toString().length < 2 ? '0' + days : days;
+            document.getElementById("hours").textContent = hours.toString().length < 2 ? '0' + hours : hours;
+            document.getElementById("minutes").textContent = minutes.toString().length < 2 ? '0' + minutes : minutes;
+            document.getElementById("secounds").textContent = seconds.toString().length < 2 ? '0' + seconds : seconds;
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timend").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    }
+
+    /* if ('{{result.activeRound}}' === '') {
+        $("#myBtn").attr("disabled", true);
+     } */
+
+    // Get the modal
+    let modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    let btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+        document.getElementsByTagName('form')[0].setAttribute('id', 'currency');
+        let element2 = document.getElementById("step2");
+        element2.classList.remove("active");
+        let element3 = document.getElementById("step3");
+        element3.classList.remove("active");
+        let element4 = document.getElementById("step4");
+        element4.classList.remove("active");
+        modal.style.display = "block";
+        document.getElementById("usdRate").value = "";
+        document.getElementById("tacRate").value = "";
+        document.getElementById('rate').value = "";
+        document.getElementById('mnemonic').value = "";
+        document.getElementById('walletAddress').value = "";
+        document.getElementById("buyTokens").disabled = true;
+
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    function tacFunction() {
+        let usdRate = document.getElementById('usdRate').value;
+        if (usdRate !== '') {
+            let element = document.getElementById("step2");
+            element.classList.add("active");
+            let centUsdValue = usdRate * 100;
+            let centRateValue = '{{result.activeRoundRate}}' * 100;
+            let finalRate = centUsdValue / centRateValue;
+            document.getElementById('tacRate').value = finalRate;
+            let value3 = document.getElementById('setDivName').innerHTML;
+            if (value3 == 'ETH') {
+                let usd = this.ajax('ether');
+                let etherRate = usdRate / usd;
+                document.getElementById('rate').value = etherRate;
+            } else {
+                document.getElementById('rate').value = '0.00';
+            }
+        } else {
+            document.getElementById('tacRate').value = '';
+            document.getElementById('rate').value = '';
+        }
+
+    }
+
+    function usdFunction() {
+        let tacRate = document.getElementById('tacRate').value;
+        if (tacRate !== '') {
+            let element = document.getElementById("step2");
+            element.classList.add("active");
+            let finalRate = tacRate * '{{result.activeRoundRate}}';
+            document.getElementById('usdRate').value = finalRate;
+            let value3 = document.getElementById('setDivName').innerHTML;
+            if (value3 == 'ETH') {
+                let usd = this.ajax('ether');
+                let etherRate = finalRate / usd;
+                document.getElementById('rate').value = etherRate;
+            } else {
+                document.getElementById('rate').value = '0.00';
+            }
+        } else {
+            document.getElementById('usdRate').value = '';
+            document.getElementById('rate').value = '';
+        }
+
+    }
+
+    function etherRate(value) {
+        let element1 = document.getElementById("step3");
+        let element = document.getElementById("step4");
+        if (value == 'ether') {
+            element1.classList.add("active");
+            element.classList.add("active");
+            document.getElementById("buyTokens").disabled = false;
+            document.getElementById('setDivName').innerHTML = 'ETH';
+            let usdRate = document.getElementById('usdRate').value;
+            let usd = this.ajax('ether');
+            let etherRate = usdRate / usd;
+            document.getElementById('rate').value = etherRate;
+            document.getElementsByTagName('form')[0].removeAttribute('id');
+        } else {
+            document.getElementsByTagName('form')[0].setAttribute('id', 'currency');
+            element1.classList.remove("active");
+            element.classList.remove("active");
+            document.getElementById("buyTokens").disabled = true;
+        }
+    }
+
+    function ajax(value) {
+        let currency;
+        if (value == 'ether') {
+            currency = 'ETH';
+        } else if (value == 'bitCoin') {
+            currency = 'BTH';
+        }
+        let ajax = $.ajax({
+            type: 'GET',
+            url: "https://api.coinbase.com/v2/exchange-rates?currency=" + currency,
+            contentType: "application/json",
+            crossDomain: true,
+            async: false,
+            success: function (response) {
+                return response.data.rates.USD;
+            },
+            error: function (xhr, status, data) {
+                return 'error';
+            }
+        });
+        return ajax.responseJSON.data.rates.USD;
+    }
+</script>
+<script>
+    $(document).on('click', '#buyTokens', function (e) {
+        e.preventDefault();
+        if ('{{result.kycStatus}}' == 2) {
+            localStorage.setItem('buyToken', 'running');
+            modal.style.display = 'none';
+            document.getElementById('buyTokens').disabled = true;
+            document.getElementById('myBtn').disabled = true;
+
+            $('button[type=submit]')
+                .html('<i class="fa fa-spinner fa-spin fa-2x"></i> ')
+                .attr('style', 'pointer-events:none');
+
+            let mnemonic = document.getElementById('mnemonic').value;
+            let wallet_address = document.getElementById('walletAddress').value;
+            let tokens = document.getElementById('tacRate').value;
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/wallets/buyTACToken',
+                data: {
+                    mnemonic: mnemonic,
+                    wallet_address: wallet_address,
+                    tokens: tokens
+                },
+                dataType: 'json',
+                success: function (json) {
+                    if (json.statusCode == 200) {
+                        $('.buyError')
+                            .addClass('success')
+                            .removeClass('error');
+                        $.toast({
+                            heading: 'Success',
+                            text: json.message,
+                            showHideTransition: 'slide',
+                            icon: 'success'
+                        });
+                        $('button[type=submit]').html('Submit');
+                        document.getElementById('buyTokens').disabled = false;
+                        document.getElementById('myBtn').disabled = false;
+                    } else {
+                        $('.buyError')
+                            .addClass('error')
+                            .removeClass('success');
+                        //                $('.buyError.error').html(json.message);
+                        $.toast({
+                            heading: 'Error',
+                            text: json.message,
+                            showHideTransition: 'fade',
+                            icon: 'error'
+                        });
+                        $('button[type=submit]')
+                            .html('Submit')
+                            .removeAttr('style');
+                        document.getElementById('buyTokens').disabled = false;
+                        document.getElementById('myBtn').disabled = false;
+                    }
+                },
+                error: function (error) {
+                    $('.buyError')
+                        .addClass('error')
+                        .removeClass('success');
+                    //            $('.buyError.error').html(error.responseJSON.message);
+                    $.toast({
+                        heading: 'Error',
+                        text: error.responseJSON.message,
+                        showHideTransition: 'fade',
+                        icon: 'error'
+                    });
+                    $('button[type=submit]')
+                        .html('Submit')
+                        .removeAttr('style');
+                    document.getElementById('buyTokens').disabled = false;
+                    document.getElementById('myBtn').disabled = false;
+                }
+            });
+        } else {
+            $.toast({
+                heading: 'Error',
+                text: document.getElementById('kycMessage').value,
+                showHideTransition: 'fade',
+                icon: 'error'
+            });
+        }
+    });
+</script>
+</body>
+
+</html>

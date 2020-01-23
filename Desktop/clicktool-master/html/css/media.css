@@ -1,0 +1,320 @@
+
+
+@media screen and (max-width:1366px)
+{
+	.ref-list ul li span{ width: 500px; }
+	.contactus-section{ padding: 140px 100px 130px 125px; }
+	.rvn-btn{ float:none; margin-top: 0; }
+	.rvn-info p{ margin:0 0 0 30px; }
+	.rvn-info h3{ padding:4px 0 0 0; }
+	.blc-box{ margin-bottom:10px; }
+	.notif-menu ul li a .text h3{font-size:20px; }
+	.notif-menu ul li a .text p{ font-size: 17px; line-height: 22px; }
+	
+	
+}
+
+@media screen and (max-width:1300px)
+{
+	.about-section .image img{ width: 100%; }
+	.about-section{ padding:20px; }
+	.about-section h2{ font-size:45px; }
+	.about-section .image{ padding:0; }
+	.about-section .text{ padding: 20px 0 0 0; }
+	.login-main-section{ background-position: center 0; }
+	.table-part{ padding: 20px 15px 20px 15px; }
+	.rvn-btn .btn{padding:6px 15px; font-size: 15px; }
+	.rvn-info p{ margin: 0 0 0 25px; }
+	.rvn-btn{ margin-top:0; float: none; }
+	.rvn-info{ padding:10px 0; }
+	.blc-box{ padding: 35px 0 10px 0; }
+	.ref-list ul li span{ width: 300px; }
+	.upl-doc-list ul li .box a img{width:100%; margin: 0; }
+	.kyc-agreement-part .terms-box p{float:none; overflow: hidden; }
+	.kyc-agreement-part{ padding: 0 0 40px 0; }
+	.contactus-section{ padding: 100px 50px; }
+	.contact-info{ padding: 0 0 0 20px; }
+	.contactus-section h2{ font-size:26px; }
+
+	
+}
+
+@media screen and (max-width:1200px)
+{
+	.Modal-terms-use .modal-dialog{ margin: 30px 15px; width: auto; }
+	.blc-box{ padding: 35px 0 40px 0; }
+	.comman-table tr th:first-child{ width:50px; }
+	.buy-order-table{ padding: 10px 20px 0 20px; }
+	.kyc-part{ padding:150px 0; }
+	.kyc-top-menu ul li{padding:0 45px; }
+	.kyc-top-menu::before{ width: 560px; }
+	.kyc-doc-form{ padding:0; }
+	.upload-box-one .toper h3{ font-size:17px; }
+	.kyc-agreement-part .image{ width:160px; height: 160px; line-height: 160px; margin: 0 25px 0 0; }
+	.contactus-section{ padding: 50px; }
+	.contact-info{ padding:35px 0 0 0; }
+	.faq-part{ padding: 15px 30px 15px 30px; }
+	.faq-ques h3{ font-size:24px; }
+	.faq-ques h3 span{ font-size:34px; }
+	.faq-ans p span{ font-size:34px; top: 6px; }
+	.notif-section .tab-content{ padding: 25px 25px 20px 25px; }
+	.notif-section .tab-content h3{ font-size: 22px; padding: 0 0 15px 0; }
+	.notif-section .tab-content p{ font-size: 18px; }
+	
+	
+	
+}
+
+
+@media screen and (max-width:1023px)
+{
+	.about-section{padding:0; }
+	.ref-btm{ padding: 80px 0 0 0; }
+	.wallet-export-link{ padding:0; }
+	.ref-list ul li{ padding: 13px 0 13px 15px; font-size: 18px; }
+	.ref-list ul li span{width:200px; }
+	.ref-policy-details{ padding: 5px 25px 5px 25px; }
+	.ref-policy-details p{ font-size: 16px; line-height: 22px; }
+	.trade-content{ padding: 34px 15px 34px 15px; }
+	.odr-content{ padding-bottom: 0px; padding: 34px 0px 0px 0px; }
+	
+	.buy-one input{width:324px; }
+	.kyc-top-menu{ padding: 20px 0 0 0; }
+	.kyc-top-menu::before{ top:52px; }
+	.kyc-content{ padding: 35px 0 35px 0; }
+	.kyc-top-menu ul li{ padding:0 25px; }
+	.kyc-top-menu::before{width:440px; }
+	.kyc-content h2{ font-size: 22px; padding: 0 0 25px 0; }
+	.up-text{ padding: 20px 0; }
+	.upload-box-one{ margin-bottom: 30px; }
+	.kyc-agreement-part{ padding:0 0 30px 0; }
+	.faq-ques{ padding: 0 0 0 55px; }
+	.faq-ques h3{ font-size:22px; }
+	.faq-ques h3 span{ font-size:32px; }
+	.faq-ans p span{ font-size:32px; top:5px; left: 54px; }
+	.faq-ans{ padding: 0 0 0 110px; }
+	.comman-table tr th{ font-size: 16px; }
+	.comman-table tr td{ font-size: 15px; }
+	.contactus-section{ padding: 40px; }
+	.contactus-section h2{ font-size: 24px; }
+	.contact-info p{ font-size:18px; }
+	.faq-part{ padding: 15px 25px 15px 25px; }
+	.referral2-section{ padding: 10px 0 0 0; }
+	
+	.notif-menu ul li .terms-box{ margin: 20px 5px 0 20px; }
+	.notif-menu ul li a{ padding: 16px 20px 19px 20px; }
+	.notif-menu ul li a .text h3{ font-size: 18px; padding: 0 0 10px 0; }
+	.notif-menu ul li a .text p{ font-size: 16px; line-height: 22px; }
+	.notif-section .tab-content small{ padding:0 0 28px 0; }
+	.notif-section .tab-content{padding:20px; }
+	.notif-section .tab-content h3{font-size:20px; padding: 0 0 10px 0; }
+	.notification-top-bar{padding:0; min-height: inherit; }
+	.notif-delete-btn a{font-size:20px; }
+	
+	
+}
+
+
+@media screen and (max-width:767px)
+{
+	.minimalize-styl-2{ margin: 15px 5px 5px 20px; }
+	.top-header-bar .navbar{ min-height:inherit; }
+	ul.navbar-top-links > li{ min-height:inherit; }
+	.user-info-box{ padding:0 20px 0 15px; min-width: 185px; }
+	.user-info-box .text-muted{ font-size:14px; }
+	.prof-img{width:40px; height: 40px; }
+	.prof-img img{width:100%; }
+	.user-notify-box .count-info .fa{width:40px; height: 40px; background-size: 100%; }
+	.user-notify-box .count-info{ padding:0 10px; min-height: inherit; }
+	.navbar-top-links li.user-notify-box{ float:right; width: 55px; display: none; }
+	.user-notify-box .count-info .fa{width:23px; height: 34px; }
+	.user-notify-box .count-info .label{fon-size:12px; width: 18px; height: 18px; line-height: 17px; right: 7px; top: 0;  }
+	.main-menu-btn{ width:30px; height: 30px; background-size: 100%; }
+	.main-menu-btn:active{ width:30px; height: 30px; background-size: 100%; }
+	.mini-navbar .user-notify-box .count-info{padding:0; }
+	.user-info-box .dropdown-menu{right:0; left: auto; float: none; min-width: inherit; width: 110px; }
+	.about-section{padding:0; }
+	.about-section h2{font-size:24px; padding: 0 0 15px 0;  }
+	.about-section h2 img{width:50px; }
+	.about-section .text p{font-size:14px; line-height: 22px; }
+	
+	.login-part h1{ font-size: 24px; padding: 20px 0 25px 0; }
+	.login-main-section{ padding:25px 15px; }
+	.login-form h2{font-size:22px; padding: 0 0 20px 0; }
+	.login-form{ padding:25px 15px 25px 15px; }
+	.login-logo{ max-width: 100px; margin: 0 auto; }
+	.login-logo img{ width: 100%; }
+	.login-social-btn a{ float: none; margin: 5px; }
+	.login-social-btn a + a{ float: none; }
+	.signup-link p a{ display: inline-block; }
+	.modal-title{font-size:20px; }
+	.terms-box p{ float:none; text-align: left; }
+	.terms-btn .btn{ margin:5px 8px; }
+	.terms-btn{padding:5px 0;}
+	.modal-dialog{ margin-top: 20px; }
+	.title-table h2{ font-size: 20px; }
+	.table-part{padding:0; }
+	.rvn-info h3{font-size:18px; float: none; }
+	.rvn-info p{ font-size:13px; float: none; margin: 0; width: auto; padding: 5px 6px; display: inline-block; }
+	.rvn-info p strong{ display: inline-block; }
+	.rvn-info p strong{font-size:15px; }
+	.c3 svg{font-size:13px;}
+	.rvn-price{ float: none; padding: 10px 0 0 0; }
+	.send-top h2{font-size:28px; }
+	.send-top p{ font-size: 18px; }
+	.send-top h3{ font-size: 20px; padding: 0 0 25px 0; }
+	.send-coin-btm p{ font-size: 18px; }
+	.send-coin-btm p a{ font-size: 20px; }
+	.my-ac-img{ width:180px; height: 180px; }
+	.my-ac-img img{ width:100%;  }
+	.ac-one{ margin: 0 0 30px 0; }
+	.my-account-section{padding:25px 0 25px 0; }
+	.referral-rewards-part .send-top{ padding: 0px 0 25px 0; }
+	.ref-btm-link{ padding: 10px 0 30px 0; }
+	.ref-btm{ padding: 50px 0 0 0; }
+	.referral-rewards-part .send-coin-form p{ font-size: 16px; line-height: 22px; padding: 15px 0 0 0; }
+	.wallet-box h3{font-size:18px; }
+	.wallet-box h3 strong{font-size:20px; margin: -4px 3px 0 10px; }
+	.wallet-box h3 img{width:35px; }
+	.wallet-box{ padding: 0; }
+	.wallet-export-link h3{ font-size: 18px; font-weight: normal; padding: 10px 15px 0 0; }
+	.wallet-export-link a{width:30px; margin: 0 10px 0 0; }
+	.wallet-export-link a img{ width: 100%; }
+	.wallet-top{ padding: 5px 0 0px 0; }
+	.ref2-menu ul li{ padding: 0 10px 0 10px; }
+	.token-box{ padding:40px 0 0 0; }
+	.token-box h3{ font-size: 22px; }
+	.token-box h2{ font-size: 60px; }
+	.ref-btm h3{ font-size: 20px; }
+	.token-box img{ width: 104px; }
+	.ref-list ul li span{ display: block; width: auto; }
+	.ref2-menu ul li a{ font-size: 15px; padding: 0 5px 16px 5px !important; }
+	#ref-tab2 .token-box h2{ font-size: 60px; }
+	.ref-list h3{font-size:20px; padding: 0 0 20px 0; }
+	.ref-list ul li{ font-size: 16px; padding: 10px 15px }
+	.ref-list{ padding: 30px 0 15px 0; }
+	.ref-policy-details{ padding: 5px 15px 5px 15px; }
+	.ref-policy-details p{ font-size: 15px; }
+	.trade-content{ padding: 30px 15px 10px 15px; }
+	.buy-one span{ position: absolute; left: 0; top: 7px; }
+	.buy-one{ position: relative; padding: 8px 8px 8px 8px; }
+	.buy-one input{ width: 100%; padding-left: 85px; }
+	.odr-history-table{ margin: 15px 15px 0 15px; width: auto; }
+	.odr-content{ background: #ffffff; }
+	.kyc-part{ padding: 30px 0; }
+	.kyc-part img{ width: 100px; }
+	.kyc-part h3{font-size:20px; padding: 20px 0 0 0; }
+	.kyc-btn{ padding:25px 0 0 0; }
+	.kyc-top-menu ul li{ padding:0 5px; }
+	.kyc-top-menu::before{width:300px; }
+	.kyc-content {padding: 25px 0 25px 0; }
+	.kyc-content h2{ font-size:20px; padding: 0 0 20px 0; }
+	.cont-btn{ width:50%; }
+	.kyc-content2 > p{font-size:16px; padding: 0 0 25px 0; }
+	.up-text{min-height:inherit; }
+	.kyc-content2{ padding-bottom:0; }
+	.kyc-agreement-part .image{ float:none; margin: 0 auto; }
+	.kyc-agreement-part{ padding: 0 0 10px 0; }
+	.kyc-agreement-part .text{ padding:15px 0 0 0; }
+	.kyc-agreement-part .terms-box p{ font-size:15px; }
+	.faq-ques{ padding:0 0 0 30px; }
+	.faq-ques h3{ font-size:18px; padding: 0 0 12px 0; }
+	.faq-ques h3 span{ left:0; font-size: 26px; }
+	.faq-part{ padding:15px; }
+	.faq-ans{ padding: 0 0 0 30px; }
+	.faq-ans p span{ left:2px; font-size: 26px; }
+	.faq-ans p{ font-size: 15px; line-height: 22px; }
+	.faq-one{padding:20px 0; }
+	.contactus-section h2{ font-size:20px; padding: 0 0 15px 0; }
+	.contactus-section{ padding:15px; }
+	.contact-info p{ font-size: 16px; line-height: 22px; }
+	.cnt-info-a{ font-size:16px; padding: 2px 0 2px 40px; margin: 0 0 20px 0; }
+	.contact-info h3{ padding:15px 0; }
+	.comman-table tr td{font-size:14px; }
+	.contact-info{ padding: 30px 0 0 0; }
+	.notification-top-bar .terms-box p{ float:left; }
+	.notif-section{display:block; }
+	.notif-menu ul li a .text h3{ font-size:16px; padding: 5px 0 10px 0; }
+	.notif-menu ul li a .text p{ font-size: 15px; }
+	.notif-menu ul li a{ padding:15px; }
+	.notif-menu ul li .terms-box{ margin: 20px 5px 0 20px; }
+	.notif-section .tab-content h3{ font-size:18px; }
+	.notif-section .tab-content small{ font-size:14px; padding: 0 0 20px 0; }
+	.notif-section .tab-content p{ font-size: 16px; line-height: 22px; }
+	.notif-section .tab-content{ padding:15px; }
+	.notif-menu{max-width:inherit; }
+	
+	
+}
+
+@media screen and (max-width:479px)
+{
+	.wrapper-content{padding:30px 10px 10px; }
+	.login-btm-img{padding:25px 0 0 0; }
+	.login-btm-img img{ width: 100%; }
+	.modal-dialog{ width:auto; max-width: inherit; margin: 20px 15px 30px 15px; }
+	.modal .modal-body{ padding:0 15px 15px 15px; }
+	.modal .modal-body p{ padding:0 0 25px 0; font-size: 16px; line-height: 22px; }
+	.rvn-btn .btn{ display: block; margin: 2px auto; }
+	#lineChart{ max-height: 200px !important;  }
+	.blc-box{ background-size:160px; margin: 0; padding: 15px 0 10px 0; }
+	.title-table h2{font-size:18px; }
+	.blc-box h2{ font-size:20px; }
+	.blc-box h4{ font-size:18px; }
+	.send-coin-part{ padding:10px 0 0 0; }
+	.send-top h2{ font-size: 22px; }
+	.send-top h3{ font-size: 16px; padding: 0 0 20px 0px; }
+	.send-coin-btm img{width:100%; }
+	.send-top p{ padding:0 0 25px 0; }
+	.ac-one{ font-size: 15px; }
+	.modal .close{ right:15px; top: 15px; }
+	.ac-one img{ margin: 0 5px 0 0; }
+	.ch-pw-link a{ font-size: 15px; }
+	.my-ac-img{ width:150px; height: 150px; }
+	.ch-pw-link{ padding: 7px 0 0 64px; }
+	.ref-btm h4{font-size:15px; }
+	.ref-btm h3{font-size: 16px; }
+	.ref-btm-link a{ margin:7px 10px; }
+	.ref-btm{ padding: 30px 0 0 0; }
+	.send-top img{ width: 60px; }
+	.wallet-box{ float: none; margin-bottom: 10px; }
+	.wallet-export-link{ float: none; }
+	.wallet-box h3 img{ width: 25px; }
+	.ref2-menu ul li{ display: block; padding: 0; }
+	.ref2-menu ul li a{ display: block; padding:10px !important; }
+	.ref2-menu ul li a::before{ bottom:0; height: 3px; }
+	.referral2-section{ padding: 0; }
+	.token-box img{ width: 60px; }
+	.token-box h3{ font-size: 20px; padding: 25px 0 10px 0; }
+	.trade-menu ul li a{ font-size: 18px; padding: 8px 10px !important; }
+	.trade-menu ul li{ width: auto; float: none; padding-top: 10px; }
+	.kyc-part h3{font-size:18px; }
+	.kyc-part{ padding:20px 0; }
+	.kyc-top-menu ul li{ display: block; padding: 7px 0; }
+	.kyc-top-menu::before {width: 5px; top: 0; bottom: 0; height: auto; }
+	.kyc-top-menu{ padding:7px 0; }
+	.cont-btn{ padding:0; width: auto; }
+	.kyc-content h2{ font-size:18px; }
+	.upl-doc-list ul li{width:auto; float: none; padding: 0 0 15px 30px; }
+	.upl-doc-list ul li .box{ min-height: inherit; }
+	.upload-box-one .toper{ padding-right:45px;  }
+	.upload-box-one h4{ font-size:18px; }
+	.upload-box-one .toper h3{ font-size: 16px; }
+	.agr-btn .up-btn{width:auto; float: none; padding: 0; }
+	.agr-btn .up-btn2{padding:10px 0 0 0; }
+	.faq-ques h3 span{ top: -2px; }
+	.contact-info{ padding: 30px 0 0 0; }
+	
+	.notification-top-bar .terms-box p{ font-size: 14px; padding:2px 0 0 0; }
+	.notif-delete-btn a{ font-size: 16px; padding: 0 0 0 20px; background-size: 14px; background-position: 0 center; }
+	.notification-top-bar .terms-box{ padding:0; }
+	.notification-top-bar{padding:5px 0 0 0; }
+	.notif-menu ul li .terms-box{ margin: 20px 0px 0 20px; }
+	.notif-section .tab-content h3{ font-size: 16px;  }
+	
+	
+}
+
+
+
+

@@ -1,0 +1,143 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="referral2-section">
+                        <div class="ref2-menu">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#ref-tab1" aria-controls="home"
+                                        role="tab" data-toggle="tab">Ref. System</a></li>
+                                <li role="presentation"><a href="#ref-tab2" aria-controls="profile" role="tab"
+                                        data-toggle="tab">Received Tokens</a></li>
+                                <li role="presentation"><a href="#ref-tab3" aria-controls="messages" role="tab"
+                                        data-toggle="tab">Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="ref-tab1">
+                                <div class="token-box">
+                                    <i class="fa fa-gift" aria-hidden="true"></i>
+                                    <h3>Total Referrals</h3>
+                                    <h2>{{reffral.totalReferrals}}</h2>
+                                </div>
+                                <div class="ref-btm">
+                                    <h4>Share your referral code</h4>
+                                    <input type="text" id="refrral_code" value="{{reffral.referralCode}}">
+                                    <div class="ref-btm-link" id="ref-code">
+                                        <a href="mailto:?subject={{reffral.referralCode}}" target="_top"><i
+                                                class="fa fa-envelope" aria-hidden="true"></i>
+                                            Email</a>
+                                        <a href="#" class="copy_refarral"><i class="fa fa-files-o"
+                                                aria-hidden="true"></i>
+                                            Copy</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="ref-tab2">
+                                <div class="token-box">
+                                    <i class="fa fa-gift" aria-hidden="true"></i>
+                                    <h3>Token Received</h3>
+                                    <h2>{{reffral.referralTokensCount}}</h2>
+                                </div>
+                                {{!-- <div class="ref-list clearfix"> --}}
+                                <div class="table-part ref-lists clearfix">
+                                    {{!-- <div class="title-table"> --}}
+                                    <h3>Referral List</h3>
+                                    {{!-- </div> --}}
+                                    {{!-- <h3>Referral List</h3> --}}
+                                    <div class="history-table table-refferal table-responsive">
+                                        {{#ifCond reffral.referralTransaction.length '>' 0 }}
+                                        <table class="footable table table-stripped statements" data-page-size="10"
+                                            data-paging="true">
+                                            <thead>
+                                                <tr>
+                                                    <th>Hash</th>
+                                                    <th>User Name</th>
+                                                    <th>Date</th>
+                                                    <th>Token Count</th>
+                                                    <th data-sort-ignore="true">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each reffral.referralTransaction}}
+                                                <tr>
+                                                    <td>{{this.txHash}}</td>
+                                                    <td>{{this.userName}}</td>
+                                                    <td>{{formatDate this.date}}</td>
+                                                    <td>{{this.tokenCount}}</td>
+                                                    <td><a href="{{ this.txURL }}" target="_blank">View On EtherScan</a>
+                                                    </td>
+                                                </tr>
+                                                {{/each}}
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="8">
+                                                        <ul class="pagination pull-right"></ul>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                        {{else}}
+                                        <h3>No rewards found !!!</h3>
+                                        {{/ifCond}}
+                                    </div>
+
+
+                                    {{!-- {{#ifCond reffral.referralTransaction.length '>' 0}}
+                                    {{#each reffral.referralTransaction}}
+                                    <ul>
+                                        <li>
+                                            <span>{{formatDate this.date}}</span> {{this.userName}}
+                                        </li>
+                                    </ul>
+                                    {{/each}}
+                                    {{else}}
+                                    <h3>No rewards found !!!</h3>
+                                    {{/ifCond}} --}}
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="ref-tab3">
+                                <div class="ref-list clearfix">
+                                    <h3>Referral Policy</h3>
+                                    <ul>
+                                        <li><span>1-10</span> 0.0010</li>
+                                        <li><span>11-20</span> 0.0100</li>
+                                        <li><span>21-30</span> 0.0200</li>
+                                        <li><span>31-40</span> 0.5000</li>
+                                        <li><span>41-50</span> 0.7000</li>
+                                    </ul>
+                                </div>
+                                <div class="ref-policy-details">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+                                        eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                                        montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                                        eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+                                        fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+                                        imperdiet a, venenatis vitae, justo</p>
+                                    <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                                        Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo
+                                        ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+                                        dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus
+                                        varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
+                                        augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+                                        Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit
+                                        amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
+                                        pulvinar, hendrerit id, lorem. ‘</p>
+                                    <p>ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                                        dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                                        montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                                        eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede Lorem ipsum
+                                        dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                                        nascetur ridiculus mus. Donec quam felis, </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
